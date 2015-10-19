@@ -1,0 +1,40 @@
+@import "variables";
+
+$size: 18px;
+$lineHeight: 1.6;
+$offset: $size * ($lineHeight - 1) / 2;
+
+nav ul.nav {
+  padding: 0 5px;
+  background-color: $light-blue;
+  text-align: center;
+  display: table;
+
+  li {
+    float: none;
+    display: table-cell;
+
+    &.active a {
+      color: $navbar-color-active;
+    }
+    a {
+      color: $navbar-color;
+      &:active, &:focus, &:hover {
+        color: $navbar-color-active;
+        background: none;
+      }
+
+      padding: 0 2px;
+      font-size: $size;
+      line-height: $lineHeight;
+      text-transform: uppercase;
+    }
+    &.divider-outer {
+      padding: $offset 5px;
+    }
+    .divider {
+      border: 1px solid $navbar-color;
+      height: $size;
+    }
+  }
+}

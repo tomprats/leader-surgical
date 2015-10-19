@@ -1,0 +1,10 @@
+.container-fluid
+  %nav
+    %ul.nav.navbar-nav
+      - navbar_links.each_with_index do |action, index|
+        - unless index.zero?
+          %li.divider-outer
+            %span.divider
+        - classes = action[:path] == request.path ? "active" : ""
+        %li(class="#{classes}")
+          = link_to action[:text], action[:path]

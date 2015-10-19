@@ -1,0 +1,19 @@
+%title Leader Surgical
+%meta(name="description" content="Here at Leader Surgical, we understand that patients don't care how much you know, until they know how much you care.")
+%link(rel="canonical" href="#{request.original_url}")
+
+- title = content_for(:meta_title) ? yield(:meta_title) : "Leader Surgical"
+- description = content_for(:meta_description) ? yield(:meta_description) : "Here at Leader Surgical, we understand that patients don't care how much you know, until they know how much you care."
+- image = content_for(:meta_image) ? yield(:meta_image) : asset_url("logo.jpg")
+
+%meta(property="og:type" content="website")
+%meta(property="og:title" content="#{title}")
+%meta(property="og:description" content="#{description}")
+%meta(property="og:image" content="#{image}")
+%meta(property="og:url" content="#{request.original_url}")
+%meta(name="twitter:card" content="summary")
+%meta(name="twitter:site" content="@tomprats")
+%meta(name="twitter:title" content="#{title}")
+%meta(name="twitter:description" content="#{description}")
+%meta(name="twitter:image" content="#{image}")
+%meta(name="twitter:url" content="#{request.original_url}")
