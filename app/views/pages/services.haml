@@ -1,0 +1,52 @@
+.container
+  .anchor-row.services-heading
+    .right-column
+      %p Information about our procedures can be found here. Search for it by specialty, doctor, or procedure.
+  .anchor-row
+    .left-column
+      %h3
+        Search By
+        %br
+        %b Specialty
+      %ul
+        %li Breast Care
+        %li Cancer
+        %li Colorectal Treatment
+        %li Laparoscopic Surgery
+        %li Hernia Surgery
+        %li Pediatric Surgery
+        %li Skin Lesions
+        %li Endoscopy
+      %h3
+        Search By
+        %br
+        %b Doctor
+      %ul
+        %li KimberLee Mudge
+        %li Thomas Nicholson
+        %li Ignacio Prats
+    .right-column
+      .row
+        .col-sm-4
+          = image_tag "person.png", class: "person-img img-responsive", usemap: "#personmap"
+          %map(name="personmap")
+            %area(id="hernia" class="person-area" shape="circle" coords="100,370,20" href="#" alt="Hernia")
+            %area(id="kidney" class="person-area" shape="circle" coords="170,350,20" href="#" alt="Kidney")
+            %area(id="breast" class="person-area" shape="circle" coords="170,220,20" href="#" alt="Breast")
+        .col-sm-8
+          %h3
+            Search By
+            %br
+            %b Procedure
+          .box
+            .procedure.instructions
+              %p Click the part of the body you wan to learn about.
+            - procedures.each do |procedure|
+              .procedure.hidden(class="#{procedure[:classes]}")
+                %p Procedure: #{procedure[:kind]}
+                %p
+                  = procedure[:physician]
+                  = link_to fa_icon(:plus), procedure[:physician_link]
+                %p
+                  Click for information on this procedure
+                  = link_to fa_icon(:plus), procedure[:procedure_link]

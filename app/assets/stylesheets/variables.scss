@@ -1,7 +1,35 @@
 @import "bootstrap/variables";
 
+$white: white;
 $dark-blue: #272264;
 $light-blue: #CDFFFF;
+$orange: orange;
 
 $navbar-color: #ABCBD1;
 $navbar-color-active: $dark-blue;
+
+$left-width: 200px;
+$left-offset: 230px;
+$footer-height: 175px;
+
+@mixin background-image($image) {
+  z-index: 0;
+
+  &:before {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    background-image: image-url($image);
+    background-size: cover;
+    -webkit-filter: blur(10px);
+       -moz-filter: blur(10px);
+         -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+            filter: blur(10px);
+  }
+}

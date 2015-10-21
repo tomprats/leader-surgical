@@ -16,6 +16,8 @@
 
   %body(class="#{action_name} #{controller_name} #{controller_name}-#{action_name}")
     = render partial: "layouts/analytics"
-    = render partial: "layouts/navbar"
-    .container
-      = yield
+    .wrapper-outer
+      .wrapper-inner
+        = render partial: "layouts/navbar"
+        = yield
+      = render partial: "layouts/footer"

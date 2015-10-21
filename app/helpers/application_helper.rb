@@ -8,4 +8,21 @@ module ApplicationHelper
       { text: "Feedback",   path: feedback_path }
     ]
   end
+
+  def procedures
+    [
+      {
+        classes: "hernia", kind: "Hernia", physician: "Dr. Prats",
+        physician_link: vision_path, procedure_link: home_path
+      },
+      {
+        classes: "kidney", kind: "Kidney", physician: "Dr. Nicholson",
+        physician_link: vision_path, procedure_link: home_path
+      },
+      {
+        classes: "breast", kind: "Breast", physician: "Dr. Mudge",
+        physician_link: vision_path, procedure_link: home_path
+      },
+    ]
+  end
 end
