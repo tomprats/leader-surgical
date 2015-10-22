@@ -1,1 +1,34 @@
 .container
+  .anchor-row.visit-heading
+    .left-column.text-center
+      %h3 Your Visit
+.group
+  .container
+    %h1 Before Your Visit
+    .anchor-row
+      .right-column
+        %ul
+          %li= link_to "What to Expect", "#"
+          %li.nested
+            Forms
+            %ul
+              %li= link_to "New Patient", "#"
+              %li= link_to "HIPPA", "#"
+          %li= link_to "Insurance & Self-Pay", "#"
+          %li= link_to "Patient Education on Copay, Deductibles, Co-Ins", "#"
+.group
+  .container
+    %h1 During Your Visit
+    .anchor-row
+      .right-column
+        %ul
+          %li= link_to "Where We Perform Services", "#"
+          %li= link_to "Transparent Charges", "#"
+          %li= link_to "Disclosure Statement", "#"
+.group
+  .container
+    %h1 After Your Visit
+    .anchor-row
+      .right-column
+        %ul
+          %li= link_to "Follow Up Appointment", "#"

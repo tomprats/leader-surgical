@@ -7,13 +7,19 @@ body.pages-vision {
     position: relative;
     font-size: 26px;
     vertical-align: top;
-    margin-top: 10px;
+    padding-top: 20px;
 
     p::first-line {
       line-height: 1;
     }
     h3 {
       text-transform: uppercase;
+    }
+  }
+  .group {
+    li a {
+      text-transform: uppercase;
+      color: $orange;
     }
   }
   .flow-icon {
@@ -28,27 +34,6 @@ body.pages-vision {
     }
     .fa-chevron-down {
       color: $white;
-    }
-  }
-  .partners {
-    margin: 30px 0;
-    padding: 20px 0;
-    background-color: $light-blue;
-    opacity: 0.7;
-
-    ul {
-      padding-left: 0;
-    }
-    li {
-      list-style: none;
-      text-transform: uppercase;
-
-      &:after {
-        content: "\f0a3";
-        font: normal normal normal 12px/1 FontAwesome;
-        color: $orange;
-        margin-left: 5px;
-      }
     }
   }
 }

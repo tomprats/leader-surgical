@@ -28,6 +28,12 @@ body {
 h3 {
   margin-top: 0;
 }
+a {
+  color: $dark-blue;
+  &:active, &:focus, &:hover {
+    color: $orange;
+  }
+}
 
 .wrapper-outer {
   position: relative;
@@ -51,5 +57,29 @@ h3 {
     position: relative;
     width: 100%;
     padding-left: $left-offset;
+  }
+}
+
+.group {
+  margin: 30px 0;
+  padding: 20px 0;
+  background-color: $light-blue;
+  opacity: 0.7;
+
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+
+    &:not(.nested):after {
+      content: "\f0a3";
+      font: normal normal normal 12px/1 FontAwesome;
+      color: $orange;
+      margin-left: 5px;
+    }
+    ul {
+      padding-left: 20px;
+    }
   }
 }
