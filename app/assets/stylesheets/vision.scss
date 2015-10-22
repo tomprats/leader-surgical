@@ -1,8 +1,6 @@
 @import "variables";
 
 body.pages-vision {
-  @include background-image("backgrounds/vision.jpg");
-
   .vision-heading {
     position: relative;
     font-size: 26px;

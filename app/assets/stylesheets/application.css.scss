@@ -23,6 +23,8 @@ html, body {
   height: 100%;
 }
 body {
+  @include background-image("background.jpg");
+
   color: $dark-blue;
 }
 h3 {

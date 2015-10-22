@@ -1,8 +1,6 @@
 @import "variables";
 
 body.pages-visit {
-  @include background-image("backgrounds/visit.jpg");
-
   .visit-heading {
     position: relative;
     vertical-align: top;

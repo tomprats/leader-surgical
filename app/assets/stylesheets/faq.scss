@@ -1,8 +1,6 @@
 @import "variables";
 
 body.pages-faq {
-  @include background-image("backgrounds/faq.jpg");
-
   .faq-heading {
     padding-top: 20px;
     text-transform: uppercase;
