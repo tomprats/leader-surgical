@@ -1,0 +1,37 @@
+@import "variables";
+
+body.pages-doctors {
+  .heading {
+    position: relative;
+    vertical-align: top;
+    padding-top: 20px;
+
+    p {
+      margin-top: -4px;
+      font-size: 26px;
+    }
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+  .group {
+    li a {
+      text-transform: uppercase;
+      color: $orange;
+    }
+  }
+  .flow-icon {
+    position: absolute;
+    bottom: -65px;
+    left: $left-offset;
+    right: 0;
+    text-align: center;
+
+    .fa-circle {
+      color: $orange;
+    }
+    .fa-chevron-down {
+      color: $white;
+    }
+  }
+}

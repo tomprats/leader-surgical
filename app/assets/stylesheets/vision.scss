@@ -1,37 +1,41 @@
 @import "variables";
 
 body.pages-vision {
-  .vision-heading {
+  .heading {
     position: relative;
-    font-size: 26px;
     vertical-align: top;
     padding-top: 20px;
 
-    p::first-line {
-      line-height: 1;
+    p {
+      margin-top: -4px;
+      font-size: 26px;
+      &:first-of-type {
+        font-style: italic;
+      }
     }
     h3 {
       text-transform: uppercase;
     }
   }
+
   .group {
-    li a {
-      text-transform: uppercase;
+    margin-top: 20px;
+
+    h1 {
+      margin-top: 0;
+      font-weight: 200;
       color: $orange;
+    }
+    .anchor-row {
+      padding-top: 0;
+    }
+    p a {
+      text-decoration: underline;
     }
   }
-  .flow-icon {
-    position: absolute;
-    bottom: -65px;
-    left: $left-offset;
-    right: 0;
-    text-align: center;
 
-    .fa-circle {
-      color: $orange;
-    }
-    .fa-chevron-down {
-      color: $white;
-    }
+  .map {
+    padding-bottom: 40px;
+    color: $mint;
   }
 }

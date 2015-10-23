@@ -1,10 +1,10 @@
 @import "variables";
 
 body.pages-services {
-  .services-heading {
+  .heading {
     padding-top: 0;
     margin-top: -25px;
-    color: $light-blue;
+    color: $mint;
     font-size: 18px;
   }
   h3 {
@@ -36,8 +36,8 @@ body.pages-services {
     font-size: 24px;
 
     position: relative;
-    background-color: $light-blue;
-    border: 4px solid $dark-blue;
+    background-color: $mint;
+    border: 4px solid $blue;
 
     &:after, &:before {
       position: absolute;
@@ -52,12 +52,12 @@ body.pages-services {
     &:after {
       margin-top: -20px;
       border-width: 20px;
-      border-right-color: $light-blue;
+      border-right-color: $blue;
     }
     &:before {
       margin-top: -26px;
       border-width: 26px;
-      border-right-color: $dark-blue;
+      border-right-color: $blue;
     }
   }
 }

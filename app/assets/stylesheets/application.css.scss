@@ -16,6 +16,7 @@
 @import "bootstrap";
 @import "variables";
 @import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,700);
 
 html, body {
   margin: 0;
@@ -25,16 +26,23 @@ html, body {
 body {
   @include background-image("background.jpg");
 
-  color: $dark-blue;
+  color: $blue;
+  font-family: "Raleway", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
 }
 h3 {
   margin-top: 0;
 }
 a {
-  color: $dark-blue;
+  color: $blue;
   &:active, &:focus, &:hover {
     color: $orange;
   }
+}
+li a {
+  font-weight: 700;
 }
 
 .wrapper-outer {
@@ -43,6 +51,12 @@ a {
 }
 .wrapper-inner {
   padding-bottom: $footer-height;
+}
+
+.heading {
+  h3 {
+    font-weight: 700;
+  }
 }
 
 .anchor-row {
@@ -65,7 +79,7 @@ a {
 .group {
   margin: 30px 0;
   padding: 20px 0;
-  background-color: $light-blue;
+  background-color: $mint;
   opacity: 0.7;
 
   ul {

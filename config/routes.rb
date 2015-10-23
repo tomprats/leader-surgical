@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   controller :pages do
     get :vision
+    get :doctors
     get :services
     get :visit
     get :faq
-    get :feedback
   end
 end

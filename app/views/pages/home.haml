@@ -1,7 +1,8 @@
 .container
-  .anchor-row.home-heading
+  .anchor-row.heading
     .right-column
-      %p Here at Leader Surgical, we understand that patients don't care how much you know, until they know how much you care.
-      = link_to vision_path, class: "text-right" do
-        %span learn more
-        %span &#8811;
+      %p
+        Here at Leader Surgical, we understand that patients don't care how much you know, until they know how much you care.
+      .learn-more
+        = link_to vision_path, class: "text-right" do
+          learn more<br>&gt;&gt;

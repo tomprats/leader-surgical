@@ -7,13 +7,17 @@ footer {
   width: 100%;
   height: $footer-height;
 
-  background-color: $light-blue;
+  background-color: $mint;
   padding: 20px 0;
 
   .right-column {
     font-size: 18px;
+    color: $orange;
   }
   .fa-youtube, .fa-facebook {
-    color: $light-blue;
+    color: $mint;
+  }
+  .tomify {
+    margin-top: 10px;
   }
 }

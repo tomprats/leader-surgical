@@ -1,16 +1,17 @@
 @import "bootstrap/variables";
 
 $white: white;
-$dark-blue: #272264;
-$light-blue: #CDFFFF;
-$orange: orange;
+$blue: #222061;
+$teal: #329A9A;
+$mint: #CDFFFF;
+$orange: #EA523F;
 
-$navbar-color: #ABCBD1;
-$navbar-color-active: $dark-blue;
+$navbar-color: $teal;
+$navbar-color-active: $blue;
 
 $left-width: 200px;
 $left-offset: 230px;
-$footer-height: 175px;
+$footer-height: 200px;
 
 @mixin background-image($image) {
   z-index: 0;
