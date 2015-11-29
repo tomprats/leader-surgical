@@ -4,6 +4,9 @@ ruby "2.2.2"
 
 gem "rails"
 gem "thin"
+gem "pg"
+gem "bcrypt"
+gem "edge"
 
 gem "haml"
 gem "uglifier"

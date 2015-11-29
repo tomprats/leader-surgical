@@ -1,0 +1,8 @@
+%ul
+  - visit.children.each do |child|
+    - if child.children.length.zero?
+      %li= link_to child.name, "#"
+    - else
+      %li.nested
+        = child.name
+        = render "partials/visit", visit: child

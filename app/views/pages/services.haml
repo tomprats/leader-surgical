@@ -1,7 +1,7 @@
 .container
   .anchor-row.heading
     .right-column
-      %p Information about our procedures can be found here. Search for it by specialty, doctor, or procedure.
+      %p Information about our procedures can be found here. Search by specialty, doctor, or procedure.
   .anchor-row
     .left-column
       %h3
@@ -9,22 +9,15 @@
         %br
         %b Specialty
       %ul
-        %li= link_to "Breast Care", "#"
-        %li= link_to "Cancer", "#"
-        %li= link_to "Colorectal Treatment", "#"
-        %li= link_to "Laparoscopic Surgery", "#"
-        %li= link_to "Hernia Surgery", "#"
-        %li= link_to "Pediatric Surgery", "#"
-        %li= link_to "Skin Lesions", "#"
-        %li= link_to "Endoscopy", "#"
+        - @services.each do |service|
+          %li= link_to service.name, "#"
       %h3
         Search By
         %br
         %b Doctor
       %ul
-        %li= link_to "KimberLee Mudge", "#"
-        %li= link_to "Thomas Nicholson", "#"
-        %li= link_to "Ignacio Prats", "#"
+        - @doctors.each do |doctor|
+          %li= link_to doctor.name, "#"
     .right-column
       .row
         .col-sm-4
@@ -40,7 +33,7 @@
             %b Procedure
           .box
             .procedure.instructions
-              %p Click the part of the body you wan to learn about.
+              %p Click the part of the body you want to learn about.
             - procedures.each do |procedure|
               .procedure.hidden(class="#{procedure[:classes]}")
                 %p Procedure: #{procedure[:kind]}
