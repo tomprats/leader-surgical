@@ -1,5 +1,5 @@
 class Doctor < ActiveRecord::Base
-  belongs_to :specialty, class_name: "Service"
+  belongs_to :specialty
 
   validates_presence_of :first_name, :last_name
   validates_uniqueness_of :first_name, scope: :last_name, message: "must be unique"
