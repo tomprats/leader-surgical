@@ -14,10 +14,11 @@
       = javascript_include_tag "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
     = csrf_meta_tags
 
-  %body(class="#{action_name} #{controller_name} #{controller_name}-#{action_name}")
+  %body(class="#{"admin-controller" if controller.class.name.deconstantize == "Admin"} #{action_name} #{controller_name} #{controller_name}-#{action_name}")
     = render partial: "layouts/analytics"
     .wrapper-outer
       .wrapper-inner
         = render partial: "layouts/navbar"
+        = render partial: "layouts/flash"
         = yield
       = render partial: "layouts/footer"
