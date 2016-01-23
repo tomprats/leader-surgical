@@ -29,7 +29,7 @@
                 %td= procedure.active ? "Yes" : "No"
                 %td= procedure.specialty ? procedure.specialty.name : "None"
                 %td= procedure.name
-                %td= procedure.link
+                %td= link_to("View", procedure.link, target: :_blank) unless procedure.link.blank?
                 %td= procedure.description
                 %td= procedure.created_at.strftime("%m/%d/%y %I:%M %p")
                 %td

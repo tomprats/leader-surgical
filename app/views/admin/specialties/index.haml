@@ -31,7 +31,7 @@
                 %td= specialty.parent ? specialty.parent.name : "None"
                 %td= specialty.doctor ? specialty.doctor.name : "None"
                 %td= specialty.name
-                %td= specialty.link
+                %td= link_to("View", specialty.link, target: :_blank) unless specialty.link.blank?
                 %td= specialty.description
                 %td= specialty.created_at.strftime("%m/%d/%y %I:%M %p")
                 %td
