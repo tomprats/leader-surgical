@@ -1,0 +1,40 @@
+.container
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 New/Edit Specialty
+        .panel-body
+          = render partial: "form"
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 Specialties
+        %table.table.table-bordered.table-hover
+          %thead
+            %tr
+              %th ID
+              %th Active
+              %th Parent
+              %th Doctor
+              %th Name
+              %th Link
+              %th Description
+              %th Created At
+              %th
+          %tbody
+            - @specialties.each do |specialty|
+              %tr
+                %td= specialty.id
+                %td= specialty.active ? "Yes" : "No"
+                %td= specialty.parent ? specialty.parent.name : "None"
+                %td= specialty.doctor ? specialty.doctor.name : "None"
+                %td= specialty.name
+                %td= specialty.link
+                %td= specialty.description
+                %td= specialty.created_at.strftime("%m/%d/%y %I:%M %p")
+                %td
+                  = link_to "Edit", edit_admin_specialty_path(specialty)
+                  &vert;
+                  = link_to "Delete", admin_specialty_path(specialty), method: :delete, data: { confirm: "Are you sure you want to delete #{specialty.name}?" }

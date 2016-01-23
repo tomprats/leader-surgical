@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20151027063215) do
 
   create_table "specialties", force: :cascade do |t|
     t.boolean  "active",      default: false, null: false
+    t.integer  "parent_id"
     t.integer  "doctor_id"
     t.string   "name",                        null: false
     t.string   "link"
@@ -73,13 +74,7 @@ ActiveRecord::Schema.define(version: 20151027063215) do
   add_index "specialties", ["active"], name: "index_specialties_on_active", using: :btree
   add_index "specialties", ["doctor_id"], name: "index_specialties_on_doctor_id", using: :btree
   add_index "specialties", ["name"], name: "index_specialties_on_name", using: :btree
-
-  create_table "specialty_connections", force: :cascade do |t|
-    t.integer "parent_id", null: false
-    t.integer "child_id",  null: false
-  end
-
-  add_index "specialty_connections", ["parent_id"], name: "index_specialty_connections_on_parent_id", using: :btree
+  add_index "specialties", ["parent_id"], name: "index_specialties_on_parent_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.boolean  "admin",           default: false, null: false

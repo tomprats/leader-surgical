@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
     resources :users, only: [:index, :edit, :create, :update, :destroy]
     resources :doctors, only: [:index, :edit, :create, :update, :destroy]
+    resources :specialties, only: [:index, :edit, :create, :update, :destroy]
   end
 end
