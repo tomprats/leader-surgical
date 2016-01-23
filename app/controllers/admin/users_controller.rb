@@ -1,12 +1,12 @@
 class Admin::UsersController < AdminController
+  before_action :set_variables, only: [:index, :edit, :create, :update]
+
   def index
     @user = User.new
-    @users = User.all
   end
 
   def edit
     @user = User.find(params[:id])
-    @users = User.all
 
     render :index
   end
@@ -16,7 +16,6 @@ class Admin::UsersController < AdminController
     if @user.save
       redirect_to({ action: :index }, success: "#{@user.name} created")
     else
-      @users = User.all
       render :index, warning: @user.errors.full_messages.join(", ")
     end
   end
@@ -26,7 +25,6 @@ class Admin::UsersController < AdminController
     if @user.update(user_params)
       redirect_to({ action: :index }, success: "#{@user.name} updated")
     else
-      @users = User.all
       render :index, warning: @user.errors.full_messages.join(", ")
     end
   end
@@ -39,6 +37,10 @@ class Admin::UsersController < AdminController
       @user.destroy
       redirect_to({ action: :index }, danger: "#{@user.name} deleted")
     end
+  end
+
+  def set_variables
+    @users = User.all
   end
 
   private

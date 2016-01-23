@@ -3,7 +3,6 @@ class Admin::SpecialtiesController < AdminController
 
   def index
     @specialty = Specialty.new
-    @specialties = Specialty.all
   end
 
   def edit
@@ -17,7 +16,6 @@ class Admin::SpecialtiesController < AdminController
     if @specialty.save
       redirect_to({ action: :index }, success: "#{@specialty.name} created")
     else
-      @specialties = Specialty.all
       render :index, warning: @specialty.errors.full_messages.join(", ")
     end
   end
@@ -27,7 +25,6 @@ class Admin::SpecialtiesController < AdminController
     if @specialty.update(specialty_params)
       redirect_to({ action: :index }, success: "#{@specialty.name} updated")
     else
-      @specialties = Specialty.all
       render :index, warning: @specialty.errors.full_messages.join(", ")
     end
   end

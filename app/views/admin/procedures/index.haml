@@ -1,0 +1,38 @@
+.container
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 New/Edit Procedure
+        .panel-body
+          = render partial: "form"
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 Procedures
+        %table.table.table-bordered.table-hover
+          %thead
+            %tr
+              %th ID
+              %th Active
+              %th Specialty
+              %th Name
+              %th Link
+              %th Description
+              %th Created At
+              %th
+          %tbody
+            - @procedures.each do |procedure|
+              %tr
+                %td= procedure.id
+                %td= procedure.active ? "Yes" : "No"
+                %td= procedure.specialty ? procedure.specialty.name : "None"
+                %td= procedure.name
+                %td= procedure.link
+                %td= procedure.description
+                %td= procedure.created_at.strftime("%m/%d/%y %I:%M %p")
+                %td
+                  = link_to "Edit", edit_admin_procedure_path(procedure)
+                  &vert;
+                  = link_to "Delete", admin_procedure_path(procedure), method: :delete, data: { confirm: "Are you sure you want to delete #{procedure.name}?" }
