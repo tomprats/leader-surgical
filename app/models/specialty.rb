@@ -1,4 +1,4 @@
-class Specialty < ActiveRecord::Base
+class Specialty < ApplicationRecord
   has_many :children, class_name: Specialty, foreign_key: :parent_id
   belongs_to :parent, class_name: Specialty
   belongs_to :doctor

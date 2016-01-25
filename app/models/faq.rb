@@ -1,4 +1,4 @@
-class FAQ < ActiveRecord::Base
+class FAQ < ApplicationRecord
   validates_presence_of :rank, :question, :answer
   validates_uniqueness_of :question
 

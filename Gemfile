@@ -2,28 +2,24 @@ source "https://rubygems.org"
 
 ruby "2.2.2"
 
-gem "rails"
-gem "thin"
-gem "pg"
-gem "bcrypt"
-gem "edge"
-gem "carrierwave"
-gem "mini_magick"
-gem "fog"
+gem "rails", github: "rails"
 
-gem "haml"
-gem "uglifier"
-gem "sass-rails"
+gem "bcrypt"
+gem "bootstrap-sass"
+gem "carrierwave"
 gem "coffee-rails"
-gem "turbolinks"
+gem "edge"
+gem "fog"
+gem "font-awesome-rails"
+gem "haml"
 gem "jquery-rails"
 gem "jquery-turbolinks"
-gem "font-awesome-rails"
-gem "bootstrap-sass"
-
-# Heroku compatable assets
-gem "rails_12factor", group: :production
-gem "yui-compressor"
+gem "mini_magick"
+gem "pg"
+gem "sass-rails"
+gem "thin"
+gem "turbolinks"
+gem "uglifier"
 
 group :development do
   gem "better_errors"

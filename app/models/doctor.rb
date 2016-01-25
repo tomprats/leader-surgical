@@ -1,4 +1,4 @@
-class Doctor < ActiveRecord::Base
+class Doctor < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   belongs_to :specialty

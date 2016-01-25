@@ -1,4 +1,4 @@
-class Visit < ActiveRecord::Base
+class Visit < ApplicationRecord
   mount_uploader :file, FileUploader
 
   acts_as_forest order: :rank
