@@ -1,7 +1,7 @@
 %ul
   - visit.children.each do |child|
     - if child.children.length.zero?
-      %li= link_to child.name, "#"
+      %li= link_to child.name, child.file.url, target: :blank
     - else
       %li.nested
         = child.name

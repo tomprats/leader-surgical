@@ -1,4 +1,6 @@
 class Visit < ActiveRecord::Base
+  mount_uploader :file, FileUploader
+
   acts_as_forest order: :rank
 
   validates_presence_of :rank, :name

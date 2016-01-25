@@ -62,7 +62,7 @@ if Doctor.count.zero?
   breast_care ||= Specialty.find_by(name: "Breast Care")
   doc = Doctor.create(
     active: true,
-    image: "partners/mudge.jpg",
+    image: Rails.root.join("app/assets/images/partners/mudge.jpg").open,
     first_name: "Kim",
     last_name: "Mudge",
     description: "Kim has a heart for patients with Breast Cancer. She continues to study, ensuring her patients get the best care.",
@@ -74,7 +74,7 @@ if Doctor.count.zero?
   endoscopy ||= Specialty.find_by(name: "Endoscopy")
   doc = Doctor.create(
     active: true,
-    image: "partners/nicholson.jpg",
+    image: Rails.root.join("app/assets/images/partners/nicholson.jpg").open,
     first_name: "Thomas",
     last_name: "Nicholson",
     description: "Tommy pays close attention to innovation in Colon and Rectal surgery, attending numerous conferences every year.",
@@ -86,7 +86,7 @@ if Doctor.count.zero?
   hernia_surgery ||= Specialty.find_by(name: "Hernia Surgery")
   doc = Doctor.create(
     active: true,
-    image: "partners/prats.jpg",
+    image: Rails.root.join("app/assets/images/partners/prats.jpg").open,
     first_name: "Ignacio",
     last_name: "Prats",
     description: "Iggy has a passion for Hernia Surgery, focusing on minimally invasive procedures utilizing Laparoscopic technology.",

@@ -1,4 +1,6 @@
 class Doctor < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+
   belongs_to :specialty
 
   validates_presence_of :first_name, :last_name

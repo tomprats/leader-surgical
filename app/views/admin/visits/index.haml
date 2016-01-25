@@ -29,7 +29,7 @@
                 %td= visit.active ? "Yes" : "No"
                 %td= visit.parent ? visit.parent.name : "None"
                 %td= visit.name
-                %td= link_to("View", visit.file, target: :_blank) unless visit.file.blank?
+                %td= link_to("View", visit.file.url, target: :_blank) unless visit.file.blank?
                 %td= visit.description
                 %td= visit.created_at.strftime("%m/%d/%y %I:%M %p")
                 %td
