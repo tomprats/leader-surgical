@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "overrides";
 @import "bootstrap";
 @import "variables";
 @import "font-awesome";
@@ -59,6 +61,10 @@ li a {
   }
 }
 
+.fa-youtube, .fa-facebook {
+  color: $mint;
+}
+
 .anchor-row {
   position: relative;
   padding-top: 30px;
@@ -99,6 +105,55 @@ li a {
     }
     ul {
       padding-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  body .wrapper-outer footer,
+  body .wrapper-outer .nav-outer,
+  body .wrapper-outer .wrapper-inner .container :not(.exempt) {
+    .left-column, .right-column, .right-column-inner {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: auto;
+    }
+  }
+
+  body.pages-services .search {
+    .left-column {
+      @include make-row();
+    }
+    .search-specialties {
+      @include make-xs-column(6);
+    }
+    .search-doctors {
+      @include make-xs-column(6);
+    }
+  }
+
+  .wrapper-inner {
+    padding-bottom: 0;
+  }
+
+  footer {
+    position: initial;
+    height: initial;
+    .left-column {
+      display: none;
+    }
+    .anchor-row {
+      padding-top: 0;
+    }
+    .col-md-6 {
+      margin-top: 10px;
+      text-align: center;
     }
   }
 }

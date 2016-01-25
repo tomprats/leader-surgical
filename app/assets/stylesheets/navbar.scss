@@ -5,6 +5,7 @@ $line-height: 1.6;
 $offset: $size * ($line-height - 1) / 2;
 
 .nav-outer.anchor-row {
+  padding: 0;
   .right-column {
     height: $left-width;
     .right-column-inner {
@@ -52,6 +53,30 @@ nav ul.nav {
     }
   }
 
-  // Sizing
   margin-bottom: 20px;
+}
+
+.small-header {
+  display: none;
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  body {
+    .large-header {
+      display: none;
+    }
+    .small-header {
+      display: initial;
+    }
+
+    .nav-outer {
+      padding-top: 0;
+    }
+    .navbar-nav {
+      margin: 0;
+    }
+    .admin-navbar.navbar-default {
+      margin-bottom: 0;
+    }
+  }
 }

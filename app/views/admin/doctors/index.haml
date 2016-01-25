@@ -29,7 +29,7 @@
                 %td= doctor.id
                 %td= doctor.active ? "Yes" : "No"
                 %td= doctor.specialty ? doctor.specialty.name : "None"
-                %td= link_to "View", image_path(doctor.image), target: :_blank
+                %td= link_to "View", image_path(doctor.image.square), target: :_blank
                 %td= doctor.first_name
                 %td= doctor.last_name
                 %td= doctor.kind

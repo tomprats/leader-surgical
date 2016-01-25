@@ -2,23 +2,25 @@
   .anchor-row.heading
     .right-column
       %p Information about our procedures can be found here. Search by specialty, doctor, or procedure.
-  .anchor-row
+  .anchor-row.search
     .left-column
-      %h3
-        Search By
-        %br
-        %b Specialty
-      %ul
-        - @services.each do |service|
-          %li= link_to service.name, "#"
-      %h3
-        Search By
-        %br
-        %b Doctor
-      %ul
-        - @doctors.each do |doctor|
-          %li= link_to doctor.name, "#"
-    .right-column
+      .search-specialties
+        %h3
+          Search By
+          %br
+          %b Specialty
+        %ul
+          - @services.each do |service|
+            %li= link_to service.name, "#"
+      .search-doctors
+        %h3
+          Search By
+          %br
+          %b Doctor
+        %ul
+          - @doctors.each do |doctor|
+            %li= link_to doctor.name, "#"
+    .right-column.search-procedures
       .row
         .col-sm-4
           = image_tag "person.png", class: "person-img img-responsive", usemap: "#personmap"

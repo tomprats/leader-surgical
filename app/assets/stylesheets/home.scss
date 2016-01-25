@@ -27,4 +27,13 @@ body.pages-home {
       text-decoration: none;
     }
   }
+
+  @media screen and (max-width: $screen-sm-max) {
+    .heading {
+      margin-top: 0;
+    }
+    p {
+      font-size: 32px;
+    }
+  }
 }

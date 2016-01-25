@@ -2,20 +2,20 @@
   .container.anchor-row
     .left-column
       .row.text-center
-        .col-sm-6
+        .col-xs-6
           = link_to "http://www.facebook.com/tomify.me", target: :_blank do
             = fa_stacked_icon "youtube", base: "circle", class: "fa-3x"
-        .col-sm-6
+        .col-xs-6
           = link_to "http://www.facebook.com/tomify.me", target: :_blank do
             = fa_stacked_icon "facebook", base: "circle", class: "fa-3x"
     .right-column
       .row
-        .col-sm-6.text-right
+        .col-md-6.text-right
           %div
             %b Apple Hill Medical Center
           %div 25 Monument Road Suite 260
           %div York, PA 17403
-        .col-sm-6.text-left
+        .col-md-6.text-left
           %div
             Hours
             %b M to F, 8 AM to 4:30 PM
@@ -28,3 +28,4 @@
       .row.tomify
         .col-xs-12.text-center
           Website by #{link_to "Tomify", "http://www.tomify.me", target: :_blank}
+    .clearfix

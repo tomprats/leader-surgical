@@ -1,6 +1,9 @@
 @import "variables";
 
 body.pages-doctors {
+  h2 {
+    margin-top: 0;
+  }
   .heading {
     position: relative;
     vertical-align: top;
@@ -22,9 +25,10 @@ body.pages-doctors {
   }
   .flow-icon {
     position: absolute;
-    bottom: -65px;
-    left: $left-offset;
+    left: 50%;
     right: 0;
+    bottom: -65px;
+    margin-left: -50%;
     text-align: center;
 
     .fa-circle {
@@ -32,6 +36,17 @@ body.pages-doctors {
     }
     .fa-chevron-down {
       color: $white;
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    .exempt {
+      .left-column {
+        width: 110px;
+      }
+      .right-column {
+        padding-left: 130px;
+      }
     }
   }
 }

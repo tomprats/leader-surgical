@@ -60,4 +60,13 @@ body.pages-services {
       border-right-color: $blue;
     }
   }
+
+  @media screen and (max-width: $screen-sm-max) {
+    .heading {
+      margin-top: 0;
+    }
+    .search .right-column {
+      display: none;
+    }
+  }
 }

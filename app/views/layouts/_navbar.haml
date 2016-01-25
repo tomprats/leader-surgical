@@ -1,17 +1,24 @@
 - if current_user.try(:admin)
   .admin-navbar.navbar.navbar-default.center
     .container-fluid
-      %ul.nav.navbar-nav
-        %li= link_to "Users", admin_users_path
-        %li= link_to "Doctors", admin_doctors_path
-        %li= link_to "Specialties", admin_specialties_path
-        %li= link_to "Procedures", admin_procedures_path
-        %li= link_to "Visits", admin_visits_path
-        %li= link_to "FAQs", admin_faqs_path
-        %li= link_to "Logout", session_path, method: :delete
+      .navbar-header
+        %button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#admin-navbar")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to "Home", home_path, class: "navbar-brand"
+      .navbar-collapse.collapse#admin-navbar
+        %ul.nav.navbar-nav
+          %li= link_to "Users", admin_users_path
+          %li= link_to "Doctors", admin_doctors_path
+          %li= link_to "Specialties", admin_specialties_path
+          %li= link_to "Procedures", admin_procedures_path
+          %li= link_to "Visits", admin_visits_path
+          %li= link_to "FAQs", admin_faqs_path
+          %li= link_to "Logout", session_path, method: :delete
 .container.nav-outer.anchor-row
   .left-column
-    = link_to home_path do
+    = link_to home_path, class: "large-header" do
       = image_tag image_path("logos/logo.png"), class: "img-responsive"
   .right-column
     .right-column-inner
@@ -24,3 +31,13 @@
             - classes = action[:path] == request.path ? "active" : ""
             %li(class="#{classes}")
               = link_to action[:text], action[:path]
+  .row.small-header.text-center
+    .col-xs-4
+      = link_to "http://www.facebook.com/tomify.me", target: :_blank do
+        = fa_stacked_icon "youtube", base: "circle", class: "fa-3x"
+    .col-xs-4
+      = link_to home_path do
+        = image_tag image_path("logos/logo-circle.png"), class: "img-responsive"
+    .col-xs-4
+      = link_to "http://www.facebook.com/tomify.me", target: :_blank do
+        = fa_stacked_icon "facebook", base: "circle", class: "fa-3x"
