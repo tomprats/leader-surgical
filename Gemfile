@@ -17,11 +17,13 @@ gem "jquery-turbolinks"
 gem "mini_magick"
 gem "pg"
 gem "sass-rails"
-gem "thin"
 gem "turbolinks"
 gem "uglifier"
 
+gem "unicorn", group: "production"
+
 group :development do
+  gem "thin"
   gem "better_errors"
   gem "binding_of_caller"
   gem "pry"
