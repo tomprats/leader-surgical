@@ -231,6 +231,7 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
+    kgio (2.9.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -261,6 +262,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    raindrops (0.14.0)
     rake (10.5.0)
     rbvmomi (1.8.2)
       builder
@@ -297,6 +299,10 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.9.0)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     websocket-driver (0.6.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -327,6 +333,7 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier
+  unicorn
 
 BUNDLED WITH
    1.10.6
