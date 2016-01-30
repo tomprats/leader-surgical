@@ -13,3 +13,4 @@
 /tmp
 /config/local_variables.rb
 /config/database.yml
+/public/uploads

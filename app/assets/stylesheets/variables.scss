@@ -11,7 +11,8 @@ $navbar-color-active: $blue;
 
 $left-width: 200px;
 $left-offset: 230px;
-$footer-height: 200px;
+$footer-height-desktop: 200px;
+$footer-height-mobile: 250px;
 
 @mixin background-image($image) {
   z-index: 0;

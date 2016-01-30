@@ -39,6 +39,10 @@ body.pages-vision {
     color: $mint;
   }
 
+  .iframe-scroller iframe {
+    pointer-events: none;
+  }
+
   @media screen and (max-width: $screen-sm-max) {
     h1 {
       text-align: center;

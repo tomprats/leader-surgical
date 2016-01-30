@@ -3,7 +3,7 @@ class Doctor < ApplicationRecord
 
   belongs_to :specialty
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :specialty, :image, :first_name, :last_name
   validates_uniqueness_of :first_name, scope: :last_name, message: "must be unique"
 
   default_scope { order(:last_name, :first_name) }

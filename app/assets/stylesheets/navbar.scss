@@ -4,7 +4,8 @@ $size: 18px;
 $line-height: 1.6;
 $offset: $size * ($line-height - 1) / 2;
 
-.nav-outer.anchor-row {
+nav .anchor-row {
+  margin-top: 30px;
   padding: 0;
   .right-column {
     height: $left-width;
@@ -15,68 +16,50 @@ $offset: $size * ($line-height - 1) / 2;
       bottom: 20px;
     }
   }
-}
+  .navbar-nav {
+    width: 100%;
+    display: table;
+    padding: 0 5px;
+    text-align: center;
+    background-color: $mint;
 
-nav ul.nav {
-  width: 100%;
-  display: table;
-  background-color: $mint;
-  padding: 0 5px;
-  text-align: center;
+    li {
+      float: none;
+      display: table-cell;
+      line-height: 1;
 
-  li {
-    float: none;
-    display: table-cell;
-    line-height: 1;
-
-    &.active a {
-      color: $navbar-color-active;
-    }
-    a {
-      color: $navbar-color;
-      &:active, &:focus, &:hover {
+      &.active a {
         color: $navbar-color-active;
-        background: none;
       }
+      a {
+        color: $navbar-color;
+        &:active, &:focus, &:hover {
+          color: $navbar-color-active;
+          background: none;
+        }
 
-      padding: 0 2px;
-      font-size: $size;
-      line-height: $line-height;
-      text-transform: uppercase;
+        padding: 0 2px;
+        font-size: $size;
+        line-height: $line-height;
+        text-transform: uppercase;
+      }
+      &.divider-outer {
+        padding: $offset 5px;
+      }
+      .divider {
+        border: 1px solid $navbar-color;
+        height: $size;
+      }
     }
-    &.divider-outer {
-      padding: $offset 5px;
-    }
-    .divider {
-      border: 1px solid $navbar-color;
-      height: $size;
-    }
+
+    margin-bottom: 20px;
   }
-
-  margin-bottom: 20px;
 }
 
-.small-header {
-  display: none;
-}
+.admin-navbar.navbar-inverse {
+  margin-bottom: 0;
 
-@media screen and (max-width: $screen-sm-max) {
-  body {
-    .large-header {
-      display: none;
-    }
-    .small-header {
-      display: initial;
-    }
-
-    .nav-outer {
-      padding-top: 0;
-    }
-    .navbar-nav {
-      margin: 0;
-    }
-    .admin-navbar.navbar-default {
-      margin-bottom: 0;
-    }
+  @media screen and (max-width: $screen-sm-max) {
+    border-bottom: 2px solid $teal;
   }
 }

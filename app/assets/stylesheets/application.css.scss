@@ -20,6 +20,9 @@
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,700);
 
+html {
+  overflow-x: hidden;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -52,7 +55,7 @@ li a {
   min-height: 100%;
 }
 .wrapper-inner {
-  padding-bottom: $footer-height;
+  padding-bottom: $footer-height-desktop;
 }
 
 .heading {
@@ -109,7 +112,20 @@ li a {
   }
 }
 
+.hidden-desktop {
+  display: none;
+}
+
 @media screen and (max-width: $screen-sm-max) {
+  body {
+    .hidden-mobile {
+      display: none;
+    }
+    .hidden-desktop {
+      display: initial;
+    }
+  }
+
   body .wrapper-outer footer,
   body .wrapper-outer .nav-outer,
   body .wrapper-outer .wrapper-inner .container :not(.exempt) {
@@ -139,21 +155,6 @@ li a {
   }
 
   .wrapper-inner {
-    padding-bottom: 0;
-  }
-
-  footer {
-    position: initial;
-    height: initial;
-    .left-column {
-      display: none;
-    }
-    .anchor-row {
-      padding-top: 0;
-    }
-    .col-md-6 {
-      margin-top: 10px;
-      text-align: center;
-    }
+    padding-bottom: $footer-height-mobile;
   }
 }

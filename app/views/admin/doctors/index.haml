@@ -11,30 +11,29 @@
       .panel.panel-default
         .panel-heading
           %h4 Doctors
-        %table.table.table-bordered.table-hover
-          %thead
-            %tr
-              %th ID
-              %th Active
-              %th Specialty
-              %th Image
-              %th First Name
-              %th Last Name
-              %th Kind
-              %th Created At
-              %th
-          %tbody
-            - @doctors.each do |doctor|
+        .table-responsive
+          %table.table.table-bordered.table-hover
+            %thead
               %tr
-                %td= doctor.id
-                %td= doctor.active ? "Yes" : "No"
-                %td= doctor.specialty ? doctor.specialty.name : "None"
-                %td= link_to "View", image_path(doctor.image.square), target: :_blank
-                %td= doctor.first_name
-                %td= doctor.last_name
-                %td= doctor.kind
-                %td= doctor.created_at.strftime("%m/%d/%y %I:%M %p")
-                %td
-                  = link_to "Edit", edit_admin_doctor_path(doctor)
-                  &vert;
-                  = link_to "Delete", admin_doctor_path(doctor), method: :delete, data: { confirm: "Are you sure you want to delete #{doctor.name}?" }
+                %th Active
+                %th Specialty
+                %th Image
+                %th First Name
+                %th Last Name
+                %th Kind
+                %th Created At
+                %th
+            %tbody
+              - @doctors.each do |doctor|
+                %tr
+                  %td= doctor.active ? "Yes" : "No"
+                  %td= doctor.specialty ? doctor.specialty.name : "None"
+                  %td= link_to "View", image_path(doctor.image.square), target: :_blank
+                  %td= doctor.first_name
+                  %td= doctor.last_name
+                  %td= doctor.kind
+                  %td= doctor.created_at.strftime("%m/%d/%y %I:%M %p")
+                  %td
+                    = link_to "Edit", edit_admin_doctor_path(doctor)
+                    &vert;
+                    = link_to "Delete", admin_doctor_path(doctor), method: :delete, data: { confirm: "Are you sure you want to delete #{doctor.name}?" }

@@ -1,12 +1,12 @@
 - if current_user.try(:admin)
-  .admin-navbar.navbar.navbar-default.center
+  .admin-navbar.navbar.navbar-inverse.center
     .container-fluid
       .navbar-header
         %button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#admin-navbar")
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        = link_to "Home", home_path, class: "navbar-brand"
+        = link_to "Admin", admin_root_path, class: "navbar-brand"
       .navbar-collapse.collapse#admin-navbar
         %ul.nav.navbar-nav
           %li= link_to "Users", admin_users_path
@@ -16,28 +16,42 @@
           %li= link_to "Visits", admin_visits_path
           %li= link_to "FAQs", admin_faqs_path
           %li= link_to "Logout", session_path, method: :delete
-.container.nav-outer.anchor-row
-  .left-column
-    = link_to home_path, class: "large-header" do
-      = image_tag image_path("logos/logo.png"), class: "img-responsive"
-  .right-column
-    .right-column-inner
-      %nav
-        %ul.nav.navbar-nav
-          - navbar_links.each_with_index do |action, index|
-            - unless index.zero?
-              %li.divider-outer
-                %span.divider
-            - classes = action[:path] == request.path ? "active" : ""
-            %li(class="#{classes}")
-              = link_to action[:text], action[:path]
-  .row.small-header.text-center
-    .col-xs-4
-      = link_to "http://www.facebook.com/tomify.me", target: :_blank do
-        = fa_stacked_icon "youtube", base: "circle", class: "fa-3x"
-    .col-xs-4
-      = link_to home_path do
-        = image_tag image_path("logos/logo-circle.png"), class: "img-responsive"
-    .col-xs-4
-      = link_to "http://www.facebook.com/tomify.me", target: :_blank do
-        = fa_stacked_icon "facebook", base: "circle", class: "fa-3x"
+%nav
+  .hidden-desktop
+    .default-navbar.navbar.navbar-default.center
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#default-navbar")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Leader Surgical", home_path, class: "navbar-brand"
+        .navbar-collapse.collapse#default-navbar
+          %ul.nav.navbar-nav
+            - navbar_links.each do |action|
+              %li= link_to action[:text], action[:path]
+      .container-fluid
+        .row.text-center
+          .col-xs-4
+            = link_to "http://www.facebook.com/tomify.me", target: :_blank do
+              = fa_stacked_icon "youtube", base: "circle", class: "fa-3x"
+          .col-xs-4
+            = link_to home_path do
+              = image_tag image_path("logos/logo-circle.png"), class: "img-responsive"
+          .col-xs-4
+            = link_to "http://www.facebook.com/tomify.me", target: :_blank do
+              = fa_stacked_icon "facebook", base: "circle", class: "fa-3x"
+  .hidden-mobile
+    .container.anchor-row
+      .left-column
+        = link_to home_path do
+          = image_tag image_path("logos/logo.png"), class: "img-responsive"
+      .right-column
+        .right-column-inner
+          %ul.nav.navbar-nav
+            - navbar_links.each_with_index do |action, index|
+              - unless index.zero?
+                %li.divider-outer
+                  %span.divider
+              - classes = action[:path] == request.path ? "active" : ""
+              %li(class="#{classes}")= link_to action[:text], action[:path]

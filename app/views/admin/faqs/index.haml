@@ -11,26 +11,23 @@
       .panel.panel-default
         .panel-heading
           %h4 FAQs
-        %table.table.table-bordered.table-hover
-          %thead
-            %tr
-              %th ID
-              %th Active
-              %th Rank
-              %th Question
-              %th Answer
-              %th Created At
-              %th
-          %tbody
-            - @faqs.each do |faq|
+        .table-responsive
+          %table.table.table-bordered.table-hover
+            %thead
               %tr
-                %td= faq.id
-                %td= faq.active ? "Yes" : "No"
-                %td= faq.rank
-                %td= faq.question
-                %td= faq.answer
-                %td= faq.created_at.strftime("%m/%d/%y %I:%M %p")
-                %td
-                  = link_to "Edit", edit_admin_faq_path(faq)
-                  &vert;
-                  = link_to "Delete", admin_faq_path(faq), method: :delete, data: { confirm: "Are you sure you want to delete this FAQ?" }
+                %th Active
+                %th Rank
+                %th Question
+                %th Created At
+                %th
+            %tbody
+              - @faqs.each do |faq|
+                %tr
+                  %td= faq.active ? "Yes" : "No"
+                  %td= faq.rank
+                  %td= faq.question
+                  %td= faq.created_at.strftime("%m/%d/%y %I:%M %p")
+                  %td
+                    = link_to "Edit", edit_admin_faq_path(faq)
+                    &vert;
+                    = link_to "Delete", admin_faq_path(faq), method: :delete, data: { confirm: "Are you sure you want to delete this FAQ?" }
