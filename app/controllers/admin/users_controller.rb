@@ -1,6 +1,4 @@
 class Admin::UsersController < AdminController
-  before_action :set_variables, only: [:index, :edit, :create, :update]
-
   def index
     @user = User.new
   end
@@ -37,10 +35,6 @@ class Admin::UsersController < AdminController
       @user.destroy
       redirect_to({ action: :index }, danger: "#{@user.name} deleted")
     end
-  end
-
-  def set_variables
-    @users = User.all
   end
 
   private

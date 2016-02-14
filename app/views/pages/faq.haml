@@ -7,7 +7,7 @@
       .right-column
         - @faqs.each do |faq|
           %h2= faq.question
-          %p= faq.answer
+          %p= faq.answer_to_html
         - if @faqs.empty?
           %h2 Where are the frequently asked questions?
           %p Coming soon!

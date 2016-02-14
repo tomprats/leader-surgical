@@ -1,6 +1,4 @@
 class Admin::VisitsController < AdminController
-  before_action :set_variables, only: [:index, :edit, :create, :update]
-
   def index
     @visit = Visit.new
   end
@@ -36,10 +34,6 @@ class Admin::VisitsController < AdminController
   end
 
   private
-  def set_variables
-    @visits = Visit.all
-  end
-
   def visit_params
     params.require(:visit).permit(
       :active, :rank, :parent_id,

@@ -1,6 +1,4 @@
 class Admin::FAQsController < AdminController
-  before_action :set_variables, only: [:index, :edit, :create, :update]
-
   def index
     @faq = FAQ.new
   end
@@ -36,10 +34,6 @@ class Admin::FAQsController < AdminController
   end
 
   private
-  def set_variables
-    @faqs = FAQ.all
-  end
-
   def faq_params
     params.require(:faq).permit(
       :active, :rank,

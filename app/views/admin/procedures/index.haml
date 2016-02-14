@@ -1,3 +1,4 @@
+- @procedures = Procedure.all
 .container
   .row
     .col-xs-12
@@ -30,7 +31,7 @@
                   %td= procedure.name
                   %td= link_to("View", procedure.link, target: :_blank) unless procedure.link.blank?
                   %td= procedure.description
-                  %td= procedure.created_at.strftime("%m/%d/%y %I:%M %p")
+                  %td= procedure.created_at_date
                   %td
                     = link_to "Edit", edit_admin_procedure_path(procedure)
                     &vert;

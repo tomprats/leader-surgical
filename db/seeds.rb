@@ -66,7 +66,7 @@ if Doctor.count.zero?
     first_name: "Kim",
     last_name: "Mudge",
     description: "Kim has a heart for patients with Breast Cancer. She continues to study, ensuring her patients get the best care.",
-    kind: "FACS",
+    kind: "MD, FACS",
     specialty_id: breast_care.id
   )
   breast_care.update(doctor_id: doc.id)
@@ -78,7 +78,7 @@ if Doctor.count.zero?
     first_name: "Thomas",
     last_name: "Nicholson",
     description: "Tommy pays close attention to innovation in Colon and Rectal surgery, attending numerous conferences every year.",
-    kind: "FACRS",
+    kind: "MD, FACRS",
     specialty_id: endoscopy.id
   )
   endoscopy.update(doctor_id: doc.id)
@@ -90,7 +90,7 @@ if Doctor.count.zero?
     first_name: "Ignacio",
     last_name: "Prats",
     description: "Iggy has a passion for Hernia Surgery, focusing on minimally invasive procedures utilizing Laparoscopic technology.",
-    kind: "FACS",
+    kind: "MD, FACS",
     specialty_id: hernia_surgery.id
   )
   hernia_surgery.update(doctor_id: doc.id)
@@ -193,5 +193,21 @@ if Visit.count.zero?
     rank: 100,
     name: "Follow Up Appointment",
     parent_id: after.id
+  )
+end
+
+if Vision.count.zero?
+  Vision.create(
+    active: true,
+    rank: 100,
+    title: "The Doctors (LSA)",
+    text: "Founded in 1999, Leader Surgical Associates brings superior surgical services and patient-centered medical care to the greater York area.\n\nTogether, Dr.'s Igancio Prats, KimberLee Mudge, and Thomas Nicholson have over 65 years of training and expertise. They continue to study and train throughout the country and bring the latest surgical techniques and new technology to the York area.\n\nAll of our physicians are Board certified by the American Board of Surgery and Dr Nicholson is additionally Board certified by the American Board of Colon and Rectal Surgery. Our doctors specialize in minimally invasive surgical procedures as well as utilizing the latest surgical techniques for breast care. Please visit [Services](/services) for more complete information."
+  )
+
+  Vision.create(
+    active: true,
+    rank: 200,
+    title: "The Surgical Center (LSC)",
+    text: "In 2000, we were proud to open an independent ambulatory surgical facility, Leader Surgical Center. We are able to offer our patients an opportunity to have their elective surgery in a state-licensed, fully-accredited, state-of-the-art, out-patient surgical center.\n\nOur mission is to meet our patient's needs by providing a dedicated TEAM of professionals, well trained in their areas of expertise, maximizing patient care, in a safe, friendly environment."
   )
 end

@@ -1,3 +1,4 @@
+- @faqs = FAQ.all
 .container
   .row
     .col-xs-12
@@ -26,7 +27,7 @@
                   %td= faq.active ? "Yes" : "No"
                   %td= faq.rank
                   %td= faq.question
-                  %td= faq.created_at.strftime("%m/%d/%y %I:%M %p")
+                  %td= faq.created_at_date
                   %td
                     = link_to "Edit", edit_admin_faq_path(faq)
                     &vert;

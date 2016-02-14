@@ -1,3 +1,4 @@
+- @doctors = Doctor.all
 .container
   .row
     .col-xs-12
@@ -32,7 +33,7 @@
                   %td= doctor.first_name
                   %td= doctor.last_name
                   %td= doctor.kind
-                  %td= doctor.created_at.strftime("%m/%d/%y %I:%M %p")
+                  %td= doctor.created_at_date
                   %td
                     = link_to "Edit", edit_admin_doctor_path(doctor)
                     &vert;

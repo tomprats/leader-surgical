@@ -4,4 +4,6 @@ class FAQ < ApplicationRecord
 
   default_scope { order(:rank) }
   scope :active, -> { where(active: true) }
+
+  to_html :answer
 end

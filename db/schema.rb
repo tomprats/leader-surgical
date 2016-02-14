@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027063215) do
+ActiveRecord::Schema.define(version: 20160214051030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,26 +25,25 @@ ActiveRecord::Schema.define(version: 20151027063215) do
     t.string   "kind"
     t.string   "description"
     t.string   "bio"
-    t.string   "accolades"
+    t.string   "associations"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "rank",         default: 10000, null: false
+    t.index ["active"], name: "index_doctors_on_active", using: :btree
+    t.index ["last_name", "first_name"], name: "index_doctors_on_last_name_and_first_name", using: :btree
+    t.index ["specialty_id"], name: "index_doctors_on_specialty_id", using: :btree
   end
-
-  add_index "doctors", ["active"], name: "index_doctors_on_active", using: :btree
-  add_index "doctors", ["last_name", "first_name"], name: "index_doctors_on_last_name_and_first_name", using: :btree
-  add_index "doctors", ["specialty_id"], name: "index_doctors_on_specialty_id", using: :btree
 
   create_table "faqs", force: :cascade do |t|
     t.boolean  "active",     default: false, null: false
     t.integer  "rank",       default: 10000, null: false
     t.string   "question",                   null: false
-    t.string   "answer",                     null: false
+    t.text     "answer",                     null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["active"], name: "index_faqs_on_active", using: :btree
+    t.index ["rank"], name: "index_faqs_on_rank", using: :btree
   end
-
-  add_index "faqs", ["active"], name: "index_faqs_on_active", using: :btree
-  add_index "faqs", ["rank"], name: "index_faqs_on_rank", using: :btree
 
   create_table "procedures", force: :cascade do |t|
     t.boolean  "active",       default: false, null: false
@@ -54,11 +53,10 @@ ActiveRecord::Schema.define(version: 20151027063215) do
     t.string   "description"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.index ["active"], name: "index_procedures_on_active", using: :btree
+    t.index ["name"], name: "index_procedures_on_name", using: :btree
+    t.index ["specialty_id"], name: "index_procedures_on_specialty_id", using: :btree
   end
-
-  add_index "procedures", ["active"], name: "index_procedures_on_active", using: :btree
-  add_index "procedures", ["name"], name: "index_procedures_on_name", using: :btree
-  add_index "procedures", ["specialty_id"], name: "index_procedures_on_specialty_id", using: :btree
 
   create_table "specialties", force: :cascade do |t|
     t.boolean  "active",      default: false, null: false
@@ -69,12 +67,11 @@ ActiveRecord::Schema.define(version: 20151027063215) do
     t.string   "description"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.index ["active"], name: "index_specialties_on_active", using: :btree
+    t.index ["doctor_id"], name: "index_specialties_on_doctor_id", using: :btree
+    t.index ["name"], name: "index_specialties_on_name", using: :btree
+    t.index ["parent_id"], name: "index_specialties_on_parent_id", using: :btree
   end
-
-  add_index "specialties", ["active"], name: "index_specialties_on_active", using: :btree
-  add_index "specialties", ["doctor_id"], name: "index_specialties_on_doctor_id", using: :btree
-  add_index "specialties", ["name"], name: "index_specialties_on_name", using: :btree
-  add_index "specialties", ["parent_id"], name: "index_specialties_on_parent_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.boolean  "admin",           default: false, null: false
@@ -84,11 +81,21 @@ ActiveRecord::Schema.define(version: 20151027063215) do
     t.string   "password_digest",                 null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.index ["admin"], name: "index_users_on_admin", using: :btree
+    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.index ["last_name", "first_name"], name: "index_users_on_last_name_and_first_name", using: :btree
   end
 
-  add_index "users", ["admin"], name: "index_users_on_admin", using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
-  add_index "users", ["last_name", "first_name"], name: "index_users_on_last_name_and_first_name", using: :btree
+  create_table "visions", force: :cascade do |t|
+    t.boolean  "active",     default: false, null: false
+    t.integer  "rank",       default: 10000, null: false
+    t.string   "title",                      null: false
+    t.text     "text",                       null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["active"], name: "index_visions_on_active", using: :btree
+    t.index ["rank"], name: "index_visions_on_rank", using: :btree
+  end
 
   create_table "visits", force: :cascade do |t|
     t.boolean  "active",      default: false, null: false
@@ -99,9 +106,8 @@ ActiveRecord::Schema.define(version: 20151027063215) do
     t.string   "description"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.index ["active"], name: "index_visits_on_active", using: :btree
+    t.index ["rank"], name: "index_visits_on_rank", using: :btree
   end
-
-  add_index "visits", ["active"], name: "index_visits_on_active", using: :btree
-  add_index "visits", ["rank"], name: "index_visits_on_rank", using: :btree
 
 end

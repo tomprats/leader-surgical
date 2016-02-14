@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     root "users#index"
 
     resources :users, only: [:index, :edit, :create, :update, :destroy]
+    resources :visions, only: [:index, :edit, :create, :update, :destroy]
     resources :doctors, only: [:index, :edit, :create, :update, :destroy]
     resources :specialties, only: [:index, :edit, :create, :update, :destroy]
     resources :procedures, only: [:index, :edit, :create, :update, :destroy]

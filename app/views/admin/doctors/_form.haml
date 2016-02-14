@@ -1,3 +1,4 @@
+- @specialties ||= Specialty.all
 = form_for [:admin, @doctor], html: { class: "form-horizontal" } do |f|
   .form-group
     .col-sm-offset-2.col-sm-10
@@ -34,9 +35,9 @@
     .col-sm-10
       = f.text_area :bio, placeholder: "Bio", class: "form-control"
   .form-group
-    = f.label :accolades, class: "col-sm-2 control-label"
+    = f.label :associations, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :accolades, placeholder: "Accolades", class: "form-control"
+      = f.text_field :associations, placeholder: "Associations", class: "form-control"
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"

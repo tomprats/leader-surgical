@@ -1,6 +1,4 @@
 class Admin::ProceduresController < AdminController
-  before_action :set_variables, only: [:index, :edit, :create, :update]
-
   def index
     @procedure = Procedure.new
   end
@@ -36,11 +34,6 @@ class Admin::ProceduresController < AdminController
   end
 
   private
-  def set_variables
-    @procedures = Procedure.all
-    @specialties = Specialty.all
-  end
-
   def procedure_params
     params.require(:procedure).permit(
       :active, :specialty_id,

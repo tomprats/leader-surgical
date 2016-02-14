@@ -1,6 +1,4 @@
 class Admin::DoctorsController < AdminController
-  before_action :set_variables, only: [:index, :edit, :create, :update]
-
   def index
     @doctor = Doctor.new
   end
@@ -36,17 +34,12 @@ class Admin::DoctorsController < AdminController
   end
 
   private
-  def set_variables
-    @doctors = Doctor.all
-    @specialties = Specialty.all
-  end
-
   def doctor_params
     params.require(:doctor).permit(
       :active, :specialty_id, :image,
       :first_name, :last_name,
       :kind, :description,
-      :bio, :accolades,
+      :bio, :associations,
       :password, :password_confirmation
     )
   end

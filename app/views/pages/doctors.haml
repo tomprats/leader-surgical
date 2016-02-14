@@ -15,9 +15,9 @@
             .col-sm-10.col-sm-offset-1
               = image_tag doctor.image.square, class: "img-responsive img-circle"
         .right-column
-          %h2= [doctor.name, "MD", doctor.kind].join(", ")
+          %h2= [doctor.name, doctor.kind].join(", ")
           %p= doctor.description
           %ul
             %li= link_to "Specialty", "#"
             %li= link_to "Bio", "#"
-            %li= link_to "Accolades", "#"
+            %li= link_to "Associations", "#"

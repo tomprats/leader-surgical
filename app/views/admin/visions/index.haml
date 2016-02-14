@@ -1,0 +1,34 @@
+- @visions = Vision.all
+.container
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 New/Edit Vision
+        .panel-body
+          = render partial: "form"
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 Visions
+        .table-responsive
+          %table.table.table-bordered.table-hover
+            %thead
+              %tr
+                %th Active
+                %th Rank
+                %th Title
+                %th Created At
+                %th
+            %tbody
+              - @visions.each do |vision|
+                %tr
+                  %td= vision.active ? "Yes" : "No"
+                  %td= vision.rank
+                  %td= vision.title
+                  %td= vision.created_at_date
+                  %td
+                    = link_to "Edit", edit_admin_vision_path(vision)
+                    &vert;
+                    = link_to "Delete", admin_vision_path(vision), method: :delete, data: { confirm: "Are you sure you want to delete this vision?" }

@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+  def vision
+    @visions = Vision.active
+  end
+
   def doctors
     @doctors = Doctor.active
   end
