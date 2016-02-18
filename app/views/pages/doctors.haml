@@ -8,16 +8,25 @@
         = fa_stacked_icon "chevron-down", base: "circle", class: "fa-2x"
 .group
   .container
-    - @doctors.each do |doctor|
-      .anchor-row.exempt
-        .left-column.text-center
-          .row
-            .col-sm-10.col-sm-offset-1
-              = image_tag doctor.image.square, class: "img-responsive img-circle"
-        .right-column
-          %h2= [doctor.name, doctor.kind].join(", ")
-          %p= doctor.description
-          %ul
-            %li= link_to "Specialty", "#"
-            %li= link_to "Bio", "#"
-            %li= link_to "Associations", "#"
+    .row
+      - @doctors.each do |doctor|
+        .col-md-6
+          .anchor-row.exempt
+            .left-column.text-center
+              .row
+                .col-sm-10.col-sm-offset-1
+                  = image_tag doctor.image.square, class: "img-responsive img-circle"
+            .right-column
+              %h2= [doctor.name, doctor.kind].join(", ")
+              - unless doctor.description.blank?
+                %p= doctor.description
+              - if doctor.specialty
+                %p
+                  %b Specialty:
+                  = link_to doctor.specialty.name, "#", class: "specialty open-sesame", data: { id: doctor.specialty.id, type: "specialty" }
+              - unless doctor.associations.blank?
+                %p
+                  %b Associations:
+                  %span= doctor.associations
+              %ul
+                %li= link_to "More Info", "#", class: "doctor open-sesame", data: { id: doctor.id, type: "doctor" }

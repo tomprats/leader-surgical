@@ -17,6 +17,9 @@ body.pages-doctors {
       text-transform: uppercase;
     }
   }
+  .exempt {
+    min-height: 200px;
+  }
   .group {
     li a {
       text-transform: uppercase;
@@ -41,6 +44,7 @@ body.pages-doctors {
 
   @media screen and (max-width: $screen-sm-max) {
     .exempt {
+      min-height: 200px;
       .left-column {
         width: 110px;
       }

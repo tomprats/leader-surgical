@@ -36,8 +36,8 @@ class Admin::ProceduresController < AdminController
   private
   def procedure_params
     params.require(:procedure).permit(
-      :active, :specialty_id,
-      :name, :link, :description
+      :active, :specialty_id, :doctor_id,
+      :body_part_id, :name, :link, :description
     )
   end
 end

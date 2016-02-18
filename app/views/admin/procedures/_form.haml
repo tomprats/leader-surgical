@@ -1,4 +1,6 @@
+- @doctors ||= Doctor.all
 - @specialties ||= Specialty.all
+- @body_parts ||= BodyPart.all
 = form_for [:admin, @procedure], html: { class: "form-horizontal" } do |f|
   .form-group
     .col-sm-offset-2.col-sm-10
@@ -7,9 +9,17 @@
           = f.check_box :active
           Active?
   .form-group
+    = f.label :doctor_id, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.collection_select :doctor_id, @doctors, :id, :name, { prompt: "None" }, class: "form-control"
+  .form-group
     = f.label :specialty_id, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :specialty_id, options_from_collection_for_select(@specialties, :id, :name, @procedure.specialty_id), { prompt: "None" }, class: "form-control"
+      = f.collection_select :specialty_id, @specialties, :id, :name, { prompt: "None" }, class: "form-control"
+  .form-group
+    = f.label :body_part_id, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.collection_select :body_part_id, @body_parts, :id, :name, { prompt: "None" }, class: "form-control"
   .form-group
     = f.label :name, class: "col-sm-2 control-label"
     .col-sm-10
@@ -21,7 +31,7 @@
   .form-group
     = f.label :description, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :description, placeholder: "Description", class: "form-control"
+      = f.text_area :description, placeholder: "Description", class: "form-control"
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"

@@ -1,0 +1,30 @@
+.modal.fade#specialty-modal(tabindex="-1" role="dialog")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close(type="button" data-dismiss="modal" aria-label="Close")
+          %span(aria-hidden="true") &times;
+        %h4.modal-title
+          %span.name
+      .modal-body
+        .row
+          .col-md-12
+            %p
+              %b Doctor:
+              = link_to "", "#", class: "doctor open-sesame", data: { id: 0, type: "doctor" }
+            %p
+              %b Concentration:
+              = link_to "", "#", class: "parent-specialty open-sesame", data: { id: 0, type: "specialty" }
+            %p
+              %b Procedures:
+              %span.procedures
+              = link_to "", "#", class: "procedure open-sesame hidden", data: { id: 0, type: "procedure" }
+            %p
+              %b Sub-Specialties:
+              %span.children
+              = link_to "", "#", class: "child-specialty open-sesame hidden", data: { id: 0, type: "specialty" }
+            %p
+              %b= link_to "View More Info", "#", class: "link", target: :_blank
+            %p.description
+      .modal-footer
+        %button.btn.btn-default(type="button" data-dismiss="modal") Close

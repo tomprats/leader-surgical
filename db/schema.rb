@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214051030) do
+ActiveRecord::Schema.define(version: 20160214101228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "body_parts", force: :cascade do |t|
+    t.boolean  "active",      default: false, null: false
+    t.integer  "doctor_id",                   null: false
+    t.string   "name",                        null: false
+    t.string   "color",                       null: false
+    t.string   "coords",                      null: false
+    t.string   "description"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["active"], name: "index_body_parts_on_active", using: :btree
+  end
 
   create_table "doctors", force: :cascade do |t|
     t.boolean  "active",       default: false, null: false
@@ -50,9 +62,11 @@ ActiveRecord::Schema.define(version: 20160214051030) do
     t.integer  "specialty_id",                 null: false
     t.string   "name",                         null: false
     t.string   "link"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "doctor_id"
+    t.integer  "body_part_id"
     t.index ["active"], name: "index_procedures_on_active", using: :btree
     t.index ["name"], name: "index_procedures_on_name", using: :btree
     t.index ["specialty_id"], name: "index_procedures_on_specialty_id", using: :btree
@@ -64,7 +78,7 @@ ActiveRecord::Schema.define(version: 20160214051030) do
     t.integer  "doctor_id"
     t.string   "name",                        null: false
     t.string   "link"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["active"], name: "index_specialties_on_active", using: :btree

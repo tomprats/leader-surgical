@@ -4,7 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
   def self.to_html(*attrs)
     attrs.each do |attr|
       define_method("#{attr}_to_html") do
-        Rails.cache.fetch(self) do
+        Rails.cache.fetch("#{self.class.name.downcase}-#{id}-#{attr}") do
           markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
           markdown.render(self[attr] || "").html_safe
         end

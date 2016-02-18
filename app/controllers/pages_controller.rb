@@ -8,8 +8,10 @@ class PagesController < ApplicationController
   end
 
   def services
-    @services = Specialty.active.top_level
     @doctors = Doctor.active
+    @specialties = Specialty.active.top_level
+    @procedures = Procedure.active
+    @body_parts = BodyPart.active
   end
 
   def visit

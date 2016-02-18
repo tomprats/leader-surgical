@@ -38,3 +38,7 @@ $navbar-default-toggle-border-color: $white;
 $navbar-default-toggle-hover-bg: $teal;
 $navbar-default-toggle-icon-bar-bg: $white;
 $navbar-default-border: $blue;
+
+body.modal-open {
+  overflow: visible;
+}

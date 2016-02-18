@@ -211,3 +211,41 @@ if Vision.count.zero?
     text: "In 2000, we were proud to open an independent ambulatory surgical facility, Leader Surgical Center. We are able to offer our patients an opportunity to have their elective surgery in a state-licensed, fully-accredited, state-of-the-art, out-patient surgical center.\n\nOur mission is to meet our patient's needs by providing a dedicated TEAM of professionals, well trained in their areas of expertise, maximizing patient care, in a safe, friendly environment."
   )
 end
+
+if BodyPart.count.zero?
+  doctor = Doctor.find_by(
+    first_name: "Kim",
+    last_name: "Mudge"
+  )
+  BodyPart.create(
+    active: true,
+    doctor_id: doctor.id,
+    name: "Breast",
+    color: "EA80B0",
+    coords: "170,220,20"
+  )
+
+  doctor = Doctor.find_by(
+    first_name: "Thomas",
+    last_name: "Nicholson"
+  )
+  BodyPart.create(
+    active: true,
+    doctor_id: doctor.id,
+    name: "Colon/Rectal",
+    color: "00008B",
+    coords: "170,350,20"
+  )
+
+  doctor = Doctor.find_by(
+    first_name: "Ignacio",
+    last_name: "Prats"
+  )
+  BodyPart.create(
+    active: true,
+    doctor_id: doctor.id,
+    name: "Hernia",
+    color: "00E5EE",
+    coords: "100,370,20"
+  )
+end

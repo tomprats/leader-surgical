@@ -64,7 +64,7 @@ li a {
   }
 }
 
-.fa-youtube, .fa-facebook {
+.fa-facebook, .fa-google {
   color: $mint;
 }
 
@@ -128,7 +128,7 @@ li a {
 
   body .wrapper-outer footer,
   body .wrapper-outer .nav-outer,
-  body .wrapper-outer .wrapper-inner .container :not(.exempt) {
+  body .wrapper-outer .wrapper-inner .container .anchor-row:not(.exempt) {
     .left-column, .right-column, .right-column-inner {
       position: relative;
       width: 100%;

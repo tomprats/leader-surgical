@@ -36,8 +36,8 @@ class Admin::DoctorsController < AdminController
   private
   def doctor_params
     params.require(:doctor).permit(
-      :active, :specialty_id, :image,
-      :first_name, :last_name,
+      :active, :rank, :specialty_id,
+      :image, :first_name, :last_name,
       :kind, :description,
       :bio, :associations,
       :password, :password_confirmation

@@ -1,0 +1,38 @@
+- @body_parts = BodyPart.active
+.container
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 New/Edit Body Part
+        .panel-body
+          = render partial: "form"
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 Body Parts
+        .table-responsive
+          %table.table.table-bordered.table-hover
+            %thead
+              %tr
+                %th Active
+                %th Doctor
+                %th Name
+                %th Color
+                %th Coords
+                %th Created At
+                %th
+            %tbody
+              - @body_parts.each do |body_part|
+                %tr
+                  %td= body_part.active ? "Yes" : "No"
+                  %td= body_part.doctor ? body_part.doctor.name : "None"
+                  %td= body_part.name
+                  %td= body_part.color
+                  %td= body_part.coords
+                  %td= body_part.created_at_date
+                  %td
+                    = link_to "Edit", edit_admin_body_part_path(body_part)
+                    &vert;
+                    = link_to "Delete", admin_body_part_path(body_part), method: :delete, data: { confirm: "Are you sure you want to delete #{body_part.name}?" }

@@ -19,7 +19,13 @@ Rails.application.routes.draw do
     resources :doctors, only: [:index, :edit, :create, :update, :destroy]
     resources :specialties, only: [:index, :edit, :create, :update, :destroy]
     resources :procedures, only: [:index, :edit, :create, :update, :destroy]
+    resources :body_parts, only: [:index, :edit, :create, :update, :destroy]
     resources :visits, only: [:index, :edit, :create, :update, :destroy]
     resources :faqs, only: [:index, :edit, :create, :update, :destroy]
   end
+
+  resources :doctors, only: [:show]
+  resources :specialties, only: [:show]
+  resources :procedures, only: [:show]
+  resources :body_parts, only: [:show]
 end

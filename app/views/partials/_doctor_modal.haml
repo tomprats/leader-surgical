@@ -1,0 +1,29 @@
+.modal.fade#doctor-modal(tabindex="-1" role="dialog")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close(type="button" data-dismiss="modal" aria-label="Close")
+          %span(aria-hidden="true") &times;
+        %h4.modal-title
+          = succeed "," do
+            %span.name
+          %span.kind
+      .modal-body
+        .row
+          .col-md-3
+            = image_tag "logos/logo.png", class: "image img-responsive"
+          .col-md-9
+            %p
+              %b Specialty:
+              = link_to "", "#", class: "specialty open-sesame", data: { id: 0, type: "specialty" }
+            %p
+              %b Associations:
+              %span.associations
+            %p
+              %b Procedures:
+              %span.procedures
+              = link_to "", "#", class: "procedure open-sesame hidden", data: { id: 0, type: "procedure" }
+            %p.description
+            %p.bio
+      .modal-footer
+        %button.btn.btn-default(type="button" data-dismiss="modal") Close

@@ -7,9 +7,13 @@
           = f.check_box :active
           Active?
   .form-group
+    = f.label :rank, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :rank, placeholder: "Rank", class: "form-control"
+  .form-group
     = f.label :specialty_id, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :specialty_id, options_from_collection_for_select(@specialties, :id, :name, @doctor.specialty_id), { prompt: "None" }, class: "form-control"
+      = f.collection_select :specialty_id, @specialties, :id, :name, { prompt: "None" }, class: "form-control"
   .form-group
     = f.label :image, class: "col-sm-2 control-label"
     .col-sm-10
@@ -27,17 +31,17 @@
     .col-sm-10
       = f.text_field :kind, placeholder: "Kind", class: "form-control"
   .form-group
+    = f.label :associations, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :associations, placeholder: "Associations", class: "form-control"
+  .form-group
     = f.label :description, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :description, placeholder: "Description", class: "form-control"
+      = f.text_area :description, placeholder: "Description", class: "form-control"
   .form-group
     = f.label :bio, class: "col-sm-2 control-label"
     .col-sm-10
       = f.text_area :bio, placeholder: "Bio", class: "form-control"
-  .form-group
-    = f.label :associations, class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.text_field :associations, placeholder: "Associations", class: "form-control"
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"

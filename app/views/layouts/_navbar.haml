@@ -14,6 +14,7 @@
           %li= link_to "Doctors", admin_doctors_path
           %li= link_to "Specialties", admin_specialties_path
           %li= link_to "Procedures", admin_procedures_path
+          %li= link_to "Body Parts", admin_body_parts_path
           %li= link_to "Visits", admin_visits_path
           %li= link_to "FAQs", admin_faqs_path
           %li= link_to "Logout", session_path, method: :delete
@@ -34,14 +35,14 @@
       .container-fluid
         .row.text-center
           .col-xs-4
-            = link_to "http://www.facebook.com/tomify.me", target: :_blank do
-              = fa_stacked_icon "youtube", base: "circle", class: "fa-3x"
+            = link_to "https://www.facebook.com/LeaderSurgicalAssociatesandCenter", target: :_blank do
+              = fa_stacked_icon "facebook", base: "circle", class: "fa-3x"
           .col-xs-4
             = link_to home_path do
               = image_tag image_path("logos/logo-circle.png"), class: "img-responsive"
           .col-xs-4
-            = link_to "http://www.facebook.com/tomify.me", target: :_blank do
-              = fa_stacked_icon "facebook", base: "circle", class: "fa-3x"
+            = link_to "https://plus.google.com/101323525078192921456/about", target: :_blank do
+              = fa_stacked_icon "google", base: "circle", class: "fa-3x"
   .hidden-mobile
     .container.anchor-row
       .left-column

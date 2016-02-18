@@ -13,7 +13,7 @@
   .form-group
     = f.label :parent_id, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.select :parent_id, options_from_collection_for_select(@visits, :id, :name, @visit.parent_id), { prompt: "None" }, class: "form-control"
+      = f.collection_select :parent_id, @visits, :id, :name, { prompt: "None" }, class: "form-control"
   .form-group
     = f.label :name, class: "col-sm-2 control-label"
     .col-sm-10
@@ -25,7 +25,7 @@
   .form-group
     = f.label :description, class: "col-sm-2 control-label"
     .col-sm-10
-      = f.text_field :description, placeholder: "Description", class: "form-control"
+      = f.text_area :description, placeholder: "Description", class: "form-control"
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"
