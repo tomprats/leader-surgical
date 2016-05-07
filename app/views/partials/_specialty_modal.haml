@@ -24,7 +24,9 @@
               %span.children
               = link_to "", "#", class: "child-specialty open-sesame hidden", data: { id: 0, type: "specialty" }
             %p
-              %b= link_to "View More Info", "#", class: "link", target: :_blank
+              %b= link_to "View More Info", "#", class: "pages", target: :_blank
+              %b.divider=  "|"
+              %b= link_to "External Info", "#", class: "link", target: :_blank
             %p.description
       .modal-footer
         %button.btn.btn-default(type="button" data-dismiss="modal") Close

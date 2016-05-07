@@ -1,0 +1,13 @@
+.container
+  .anchor-row
+    .left-column
+      .row
+        .col-xs-6.col-sm-4.col-md-12
+          - if @specialty
+            %h3= @specialty.name
+            %ul
+              - @specialty.pages.each do |page|
+                %li= link_to page.name, "/#{page.path}"
+    .right-column
+      .row
+        .col-md-12= @html

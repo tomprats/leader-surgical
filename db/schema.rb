@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214101228) do
+ActiveRecord::Schema.define(version: 20160506233109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 20160214101228) do
     t.datetime "updated_at",                 null: false
     t.index ["active"], name: "index_faqs_on_active", using: :btree
     t.index ["rank"], name: "index_faqs_on_rank", using: :btree
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "specialty_id"
+    t.boolean  "active",       default: false
+    t.integer  "rank",         default: 100,   null: false
+    t.string   "path",                         null: false
+    t.string   "name",                         null: false
+    t.text     "text",                         null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["active", "rank", "specialty_id"], name: "index_pages_on_active_and_rank_and_specialty_id", using: :btree
+    t.index ["path"], name: "index_pages_on_path", using: :btree
   end
 
   create_table "procedures", force: :cascade do |t|

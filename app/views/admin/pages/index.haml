@@ -1,0 +1,38 @@
+- @pages = Page.all
+.container
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 New/Edit Page
+        .panel-body
+          = render partial: "form"
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-heading
+          %h4 Pages
+        .table-responsive
+          %table.table.table-bordered.table-hover
+            %thead
+              %tr
+                %th Active
+                %th Specialty
+                %th Rank
+                %th Name
+                %th Path
+                %th Created At
+                %th
+            %tbody
+              - @pages.each do |page|
+                %tr
+                  %td= page.active ? "Yes" : "No"
+                  %td= page.specialty ? page.specialty.name : "None"
+                  %td= page.rank
+                  %td= page.name
+                  %td= link_to page.path, "/#{page.path}"
+                  %td= page.created_at_date
+                  %td
+                    = link_to "Edit", edit_admin_page_path(page)
+                    &vert;
+                    = link_to "Delete", admin_page_path(page), method: :delete, data: { confirm: "Are you sure you want to delete #{page.name}?" }

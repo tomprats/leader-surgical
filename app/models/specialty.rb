@@ -3,6 +3,7 @@ class Specialty < ApplicationRecord
   belongs_to :parent, class_name: Specialty
   belongs_to :doctor
   has_many :procedures
+  has_many :pages
 
   validates_presence_of :name
   validates_uniqueness_of :name
@@ -32,6 +33,11 @@ class Specialty < ApplicationRecord
         {
           id: procedure.id,
           name: procedure.name
+        }
+      },
+      pages: pages.collect { |page|
+        {
+          path: page.path
         }
       }
     }

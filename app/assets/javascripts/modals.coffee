@@ -99,12 +99,30 @@ $ ->
           unless i == data.children.length - 1 then $children.append ", "
       else
         $children.closest("p").addClass("hidden")
+      hide = true
+      $pages = $modal.find(".pages")
+      $p = $pages.closest("p")
+      $p.find(".divider").removeClass("hidden")
+      if data.pages && data.pages.length > 0
+        page = data.pages[0]
+        $pages.attr("href", "/" + page.path)
+        $pages.removeClass("hidden")
+        hide = false
+      else
+        $pages.addClass("hidden")
+        $p.find(".divider").addClass("hidden")
       $link = $modal.find(".link")
       if data.link && data.link != ""
-        $link.closest("p").removeClass("hidden")
         $link.attr("href", data.link)
+        $link.removeClass("hidden")
+        hide = false
       else
-        $link.closest("p").addClass("hidden")
+        $link.addClass("hidden")
+        $p.find(".divider").addClass("hidden")
+      if hide
+        $p.addClass("hidden")
+      else
+        $p.removeClass("hidden")
       $description = $modal.find(".description")
       if data.description && data.description != ""
         $description.removeClass("hidden")

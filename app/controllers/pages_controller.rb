@@ -21,4 +21,10 @@ class PagesController < ApplicationController
   def faq
     @faqs = FAQ.active
   end
+
+  def show
+    @page ||= Page.find_by(path: params[:path]) || not_found
+    @html = @page.text_to_html
+    @specialty = @page.specialty
+  end
 end
