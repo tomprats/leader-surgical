@@ -28,10 +28,5 @@ $footer-height-mobile: 250px;
 
     background-image: image-url($image);
     background-size: cover;
-    -webkit-filter: blur(10px);
-       -moz-filter: blur(10px);
-         -o-filter: blur(10px);
-        -ms-filter: blur(10px);
-            filter: blur(10px);
   }
 }
