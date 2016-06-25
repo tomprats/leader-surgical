@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get :services
     get :visit
     get :faq
+    get :pay
   end
 
   resource :session, only: [:new, :create, :destroy]

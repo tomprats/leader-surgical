@@ -14,6 +14,26 @@ body.pages-home {
       font-weight: 400;
     }
   }
+
+  .pay-bill {
+    text-align: center;
+
+    a {
+      padding: 10px 15px;
+      color: $white;
+      background-color: $teal;
+      &:hover {
+        color: $blue;
+      }
+    }
+    &.hidden-mobile {
+      padding-top: 50px;
+    }
+    &.hidden-desktop {
+      position: absolute;
+      bottom: 20px;
+    }
+  }
   .learn-more {
     text-align: right;
 
@@ -25,6 +45,9 @@ body.pages-home {
       font-size: 24px;
       text-transform: uppercase;
       text-decoration: none;
+      &:hover {
+        color: $white;
+      }
     }
   }
 

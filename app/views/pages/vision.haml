@@ -1,4 +1,4 @@
-.container
+.container-fluid
   .anchor-row.heading
     .left-column.text-center
       %h3 Our Vision
@@ -7,12 +7,12 @@
       %p.text-right - From the oath of fellowship in the American College of Surgeons
 .group
   - @visions.each do |vision|
-    .container
+    .container-fluid
       %h1= vision.title
       .anchor-row
         .right-column
           = vision.text_to_html
-.container.map
+.container-fluid.map
   %h1 Location
   .text-center
     %p Our offices are located in the Apple Hill Medical Center complex.

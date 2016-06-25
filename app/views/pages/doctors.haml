@@ -1,4 +1,4 @@
-.container
+.container-fluid
   .anchor-row.heading
     .left-column.text-center
       %h3 Our Doctors
@@ -7,7 +7,7 @@
       .flow-icon
         = fa_stacked_icon "chevron-down", base: "circle", class: "fa-2x"
 .group
-  .container
+  .container-fluid
     .row
       - @doctors.each do |doctor|
         .col-md-6

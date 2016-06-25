@@ -85,7 +85,7 @@ li a {
   }
 }
 
-.admin-controller .container {
+.admin-controller nav {
   margin-bottom: 20px;
 }
 
@@ -128,7 +128,7 @@ li a {
 
   body .wrapper-outer footer,
   body .wrapper-outer .nav-outer,
-  body .wrapper-outer .wrapper-inner .container .anchor-row:not(.exempt) {
+  body .wrapper-outer .wrapper-inner .container-fluid .anchor-row:not(.exempt) {
     .left-column, .right-column, .right-column-inner {
       position: relative;
       width: 100%;

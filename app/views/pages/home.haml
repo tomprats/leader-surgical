@@ -1,8 +1,13 @@
-.container
+.container-fluid
   .anchor-row.heading
+    .left-column
+      .pay-bill.hidden-mobile
+        = link_to "Pay Your Bill", pay_path
     .right-column
       %p
         Here at Leader Surgical, we understand that patients don't care how much you know, until they know how much you care.
+      .pay-bill.hidden-desktop
+        = link_to "Pay Your Bill", pay_path
       .learn-more
         = link_to vision_path, class: "text-right" do
           learn more<br>&gt;&gt;
