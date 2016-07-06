@@ -23,23 +23,24 @@ $ ->
       $specialty.text(data.specialty.name)
       $associations = $modal.find(".associations")
       if data.associations && data.associations != ""
-        $associations.closest("p").removeClass("hidden")
+        $associations.closest("div").removeClass("hidden")
         $associations.text(data.associations)
       else
-        $associations.closest("p").addClass("hidden")
+        $associations.closest("div").addClass("hidden")
       $procedures = $modal.find(".procedures")
       $procedures.empty()
       if data.procedures && data.procedures.length > 0
-        $procedures.closest("p").removeClass("hidden")
+        $procedures.closest("div").removeClass("hidden")
         $base = $modal.find(".procedure").clone().removeClass("hidden")
         for procedure, i in data.procedures
           $procedure = $base.clone()
           $procedure.text(procedure.name)
           $procedure.data("id", procedure.id)
-          $procedures.append $procedure
-          unless i == data.procedures.length - 1 then $procedures.append ", "
+          $li = $("<li></li>")
+          $li.append $procedure
+          $procedures.append $li
       else
-        $procedures.closest("p").addClass("hidden")
+        $procedures.closest("div").addClass("hidden")
       $description = $modal.find(".description")
       if data.description && data.description != ""
         $description.removeClass("hidden")
@@ -61,47 +62,49 @@ $ ->
       $modal.find(".name").text(data.name)
       $doctor = $modal.find(".doctor")
       if data.doctor
-        $doctor.closest("p").removeClass("hidden")
+        $doctor.closest("div").removeClass("hidden")
         $doctor.data("id", data.doctor.id)
         $doctor.text(data.doctor.name)
       else
-        $doctor.closest("p").addClass("hidden")
+        $doctor.closest("div").addClass("hidden")
       $parent = $modal.find(".parent-specialty")
       if data.parent
-        $parent.closest("p").removeClass("hidden")
+        $parent.closest("div").removeClass("hidden")
         $parent.data("id", data.parent.id)
         $parent.text(data.parent.name)
       else
-        $parent.closest("p").addClass("hidden")
+        $parent.closest("div").addClass("hidden")
       $procedures = $modal.find(".procedures")
       $procedures.empty()
       if data.procedures && data.procedures.length > 0
-        $procedures.closest("p").removeClass("hidden")
+        $procedures.closest("div").removeClass("hidden")
         $base = $modal.find(".procedure").clone().removeClass("hidden")
         for procedure, i in data.procedures
           $procedure = $base.clone()
           $procedure.text(procedure.name)
           $procedure.data("id", procedure.id)
-          $procedures.append $procedure
-          unless i == data.procedures.length - 1 then $procedures.append ", "
+          $li = $("<li></li>")
+          $li.append $procedure
+          $procedures.append $li
       else
-        $procedures.closest("p").addClass("hidden")
+        $procedures.closest("div").addClass("hidden")
       $children = $modal.find(".children")
       $children.empty()
       if data.children && data.children.length > 0
-        $children.closest("p").removeClass("hidden")
+        $children.closest("div").removeClass("hidden")
         $base = $modal.find(".child-specialty").clone().removeClass("hidden")
         for child, i in data.children
           $child = $base.clone()
           $child.text(child.name)
           $child.data("id", child.id)
-          $children.append $child
-          unless i == data.children.length - 1 then $children.append ", "
+          $li = $("<li></li>")
+          $li.append $child
+          $children.append $li
       else
-        $children.closest("p").addClass("hidden")
+        $children.closest("div").addClass("hidden")
       hide = true
       $pages = $modal.find(".pages")
-      $p = $pages.closest("p")
+      $p = $pages.closest("div")
       $p.find(".divider").removeClass("hidden")
       if data.pages && data.pages.length > 0
         page = data.pages[0]
@@ -138,24 +141,24 @@ $ ->
       $modal.find(".name").text(data.name)
       $doctor = $modal.find(".doctor")
       if data.doctor
-        $doctor.closest("p").removeClass("hidden")
+        $doctor.closest("div").removeClass("hidden")
         $doctor.data("id", data.doctor.id)
         $doctor.text(data.doctor.name)
       else
-        $doctor.closest("p").addClass("hidden")
+        $doctor.closest("div").addClass("hidden")
       $specialty = $modal.find(".specialty")
       if data.specialty
-        $specialty.closest("p").removeClass("hidden")
+        $specialty.closest("div").removeClass("hidden")
         $specialty.data("id", data.specialty.id)
         $specialty.text(data.specialty.name)
       else
-        $specialty.closest("p").addClass("hidden")
+        $specialty.closest("div").addClass("hidden")
       $link = $modal.find(".link")
       if data.link && data.link != ""
-        $link.closest("p").removeClass("hidden")
+        $link.closest("div").removeClass("hidden")
         $link.attr("href", data.link)
       else
-        $link.closest("p").addClass("hidden")
+        $link.closest("div").addClass("hidden")
       $description = $modal.find(".description")
       if data.description && data.description != ""
         $description.removeClass("hidden")

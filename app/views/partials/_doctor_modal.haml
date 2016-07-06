@@ -13,17 +13,17 @@
           .col-md-3
             = image_tag "logos/logo.png", class: "image img-responsive"
           .col-md-9
-            %p
+            %div
               %b Specialty:
               = link_to "", "#", class: "specialty open-sesame", data: { id: 0, type: "specialty" }
-            %p
+            %div
               %b Associations:
               %span.associations
-            %p
+            %div
               %b Procedures:
-              %span.procedures
+              %ul.procedures
               = link_to "", "#", class: "procedure open-sesame hidden", data: { id: 0, type: "procedure" }
-            %p.description
-            %p.bio
+            %div.description
+            %div.bio
       .modal-footer
         %button.btn.btn-default(type="button" data-dismiss="modal") Close
