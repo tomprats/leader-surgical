@@ -2,5 +2,21 @@
   .anchor-row.heading
     .left-column.text-center
       %h3 Pay Your Bill
-.container-fluid.text-center
-  %h1 Coming Soon
+.container-fluid.content
+  .row
+    .col-sm-6.col-md-5.col-md-offset-1
+      .media
+        .media-left
+          = link_to "https://navicurepayments.com/lsa/pay", target: :_blank do
+            = image_tag "logos/logo-lsa.png", class: "media-object", width: 100
+        .media-body
+          %h4.media-heading Leader Surgical Associates
+          %p Click the icon on the left to pay your bill for Leader Surgical Associates. This is the provider who performed your service.
+    .col-sm-6.col-md-5
+      .media
+        .media-left
+          = link_to "https://navicurepayments.com/lsc/pay", target: :_blank do
+            = image_tag "logos/logo-lsc.png", class: "media-object", width: 100
+        .media-body
+          %h4.media-heading Leader Surgical Center
+          %p Click the icon on the left to pay your bill for Leader Surgical Center. This is the facility, the procedure room and the nurses who took care of you the day of your procedure.
