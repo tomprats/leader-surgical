@@ -16,3 +16,4 @@
 //= require bootstrap
 //= require_tree .
 //= require turbolinks
+//= require turbolinks-compatability

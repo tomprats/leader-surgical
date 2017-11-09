@@ -50,7 +50,7 @@ $ ->
       $(".body-part").removeClass("hidden")
 
   if $("body.pages-services").length > 0
-    $.fn.maphilight.defaults = options()
+    $.fn.maphilight.defaults = Object.assign({}, $.fn.maphilight.defaults, options())
     $(".person-img").maphilight()
     resetAreas()
 

@@ -1,15 +1,15 @@
 source "https://rubygems.org"
 
-ruby "2.2.2"
+ruby "2.4.2"
 
-gem "rails", github: "rails"
+gem "rails"
 
 gem "bcrypt"
 gem "bootstrap-sass"
 gem "carrierwave"
 gem "coffee-rails"
 gem "edge"
-gem "fog"
+gem "fog-aws"
 gem "font-awesome-rails"
 gem "haml"
 gem "jquery-rails"
