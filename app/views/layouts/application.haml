@@ -8,6 +8,9 @@
     = render partial: "layouts/sharing"
     = render partial: "layouts/meta"
 
+    :javascript
+      Object.assign || document.write('<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6"><\/script>');
+
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     /[if lt IE 9]
