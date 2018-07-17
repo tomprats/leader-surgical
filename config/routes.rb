@@ -31,5 +31,6 @@ Rails.application.routes.draw do
   resources :procedures, only: [:show]
   resources :body_parts, only: [:show]
 
+  get :pain, to: "pain#show"
   get ":path", to: "pages#show", as: :page
 end

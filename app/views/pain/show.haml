@@ -1,0 +1,48 @@
+.container-fluid
+  .heading
+    %h3 Pain Management
+.group
+  .container-fluid
+    .anchor-row
+      .right-column
+        = form_for :pain, html: { class: "form-horizontal" }, method: :get do |f|
+          = hidden_field_tag :pdf, true
+          .form-group
+            = label_tag :lbmi, "Weight < 150", class: "col-sm-4 control-label"
+            .col-sm-8
+              %label.radio-inline
+                = radio_button_tag :lbmi, true, params[:lbmi] == "true", required: true
+                Yes
+              %label.radio-inline
+                = radio_button_tag :lbmi, false, params[:lbmi] == "false", required: true
+                No
+          .form-group
+            = label_tag :or, "Low Pain Threshold", class: "col-sm-4 control-label"
+            .col-sm-8
+              %label.radio-inline
+                = radio_button_tag :or, true, params[:or] == "true", required: true
+                Yes
+              %label.radio-inline
+                = radio_button_tag :or, false, params[:or] == "false", required: true
+                No
+          .form-group
+            = label_tag :ic, "Ibuprofen Contraindication", class: "col-sm-4 control-label"
+            .col-sm-8
+              %label.radio-inline
+                = radio_button_tag :ic, true, params[:ic] == "true", required: true
+                Yes
+              %label.radio-inline
+                = radio_button_tag :ic, false, params[:ic] == "false", required: true
+                No
+          .form-group
+            = label_tag :ac, "Acetaminophen Contraindication", class: "col-sm-4 control-label"
+            .col-sm-8
+              %label.radio-inline
+                = radio_button_tag :ac, true, params[:ac] == "true", required: true
+                Yes
+              %label.radio-inline
+                = radio_button_tag :ac, false, params[:ac] == "false", required: true
+                No
+          .form-group
+            .col-sm-offset-4.col-sm-8
+              = submit_tag "Submit", class: "btn btn-primary"

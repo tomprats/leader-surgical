@@ -1,0 +1,14 @@
+@import "variables";
+
+body.pain-show {
+  .heading {
+    padding-top: 20px;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    h3 {
+      text-align: center;
+    }
+  }
+}
