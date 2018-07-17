@@ -7,7 +7,7 @@
     .col-sm-6.col-md-5.col-md-offset-1
       .media
         .media-left
-          = link_to "https://navicurepayments.com/lsa/pay", target: :_blank do
+          = link_to "#", data: { target: "#lsa-payment-modal", toggle: "modal" } do
             = image_tag "logos/logo-lsa.png", class: "media-object", width: 100
         .media-body
           %h4.media-heading Leader Surgical Associates
