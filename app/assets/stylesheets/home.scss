@@ -6,12 +6,29 @@ body.pages-home {
     padding-top: 0;
   }
 
-  p {
+  .title {
     font-size: 48px;
     font-weight: 700;
 
     &::first-line {
       font-weight: 400;
+    }
+  }
+
+  .group {
+    margin-top: 0;
+    p {
+      font-size: 26px;
+    }
+  }
+
+  .photographers {
+    float: left;
+    font-size: 18px;
+    width: 50%;
+    &:after {
+      clear: both;
+      content: "";
     }
   }
 
@@ -55,7 +72,7 @@ body.pages-home {
     .heading {
       margin-top: 0;
     }
-    p {
+    .title {
       font-size: 32px;
     }
   }

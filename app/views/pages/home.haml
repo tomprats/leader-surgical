@@ -4,10 +4,22 @@
       .pay-bill.hidden-mobile
         = link_to "Pay Your Bill", pay_path
     .right-column
-      %p
+      %p.title
         Here at Leader Surgical, we understand that patients don't care how much you know, until they know how much you care.
       .pay-bill.hidden-desktop
         = link_to "Pay Your Bill", pay_path
       .learn-more
         = link_to vision_path, class: "text-right" do
           learn more<br>&gt;&gt;
+.group
+  .container-fluid
+    .anchor-row
+      .right-column
+        %p We wish to thank our photographers for a wonderful job decorating our office with great photography of our great town and nearby wildlife.
+        %ul
+          %li
+            = link_to "https://www.detardigitalphotography.com", target: :_blank do
+              Matt Detar Photography
+          %li
+            = link_to "https://www.walterdorsett.com", target: :_blank do
+              Walter Dorsett
