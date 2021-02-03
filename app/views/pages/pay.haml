@@ -4,15 +4,7 @@
       %h3 Pay Your Bill
 .container-fluid.content
   .row
-    .col-sm-6.col-md-5.col-md-offset-1
-      .media
-        .media-left
-          = link_to "#", data: { target: "#lsa-payment-modal", toggle: "modal" } do
-            = image_tag "logos/logo-lsa.png", class: "media-object", width: 100
-        .media-body
-          %h4.media-heading Leader Surgical Associates
-          %p Click the icon on the left to pay your bill for Leader Surgical Associates. This is the provider who performed your service.
-    .col-sm-6.col-md-5
+    .col-sm-6.col-sm-offset-3
       .media
         .media-left
           = link_to "https://www.patientnotebook.com/lsc/payment", target: :_blank do
